@@ -20,6 +20,11 @@ function getTransporter(): Transporter {
       user: config.emailUser,
       pass: config.emailAppPassword,
     },
+    // Fail fast: nodemailer's defaults wait up to 2 minutes per socket, which
+    // makes "send code" hang forever when Gmail is slow. 10s cap per phase.
+    connectionTimeout: 10_000,
+    greetingTimeout: 10_000,
+    socketTimeout: 10_000,
   });
 
   return transporter;

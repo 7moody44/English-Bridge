@@ -8,7 +8,7 @@ import UserProgress from '../models/UserProgress.js';
 import { config } from '../config/config.js';
 import { AuthRequest, authMiddleware } from '../middleware/auth.js';
 import { generateOtpCode, hashOtpCode, verifyOtpCode, OTP_TTL_MS } from '../services/otpService.js';
-import { sendOtpEmail, sendNewUserEmail } from '../services/emailService.js';
+import { sendOtpEmail, sendNewUserEmail, type SendOtpResult } from '../services/emailService.js';
 import { touchStreak } from '../services/progressService.js';
 
 const router = Router();
@@ -207,7 +207,18 @@ router.post('/register/initiate', async (req: Request, res: Response): Promise<v
 
     await user.save();
 
-    const emailResult = await sendOtpEmail(user.email, code, 'verify');
+    // Send the OTP email in the BACKGROUND — never block the response on SMTP.
+    // Gmail can take 1-2 minutes (or stall), which makes "Send code" appear
+    // frozen. The pending token is returned instantly; the email keeps going.
+    // Dev mode awaits because it only logs to the console (instant) and the
+    // devCode must be included in the response.
+    const emailPromise = sendOtpEmail(user.email, code, 'verify');
+    let emailResult: SendOtpResult | undefined;
+    if (config.isEmailReal) {
+      emailPromise.catch((e) => console.error('OTP email background send failed:', e));
+    } else {
+      emailResult = await emailPromise;
+    }
 
     const pendingToken = issuePendingToken(user._id.toString(), 'verify');
 
@@ -216,7 +227,7 @@ router.post('/register/initiate', async (req: Request, res: Response): Promise<v
       message: 'Verification code sent. Check your email.',
       pendingToken,
       // devCode is only populated in dev mode (no SMTP configured)
-      ...(emailResult.devCode ? { devCode: emailResult.devCode, devMode: true } : {}),
+      ...(emailResult?.devCode ? { devCode: emailResult.devCode, devMode: true } : {}),
       email: user.email,
     });
   } catch (error) {
@@ -345,7 +356,14 @@ router.post('/register/resend-otp', async (req: Request, res: Response): Promise
     user.emailVerificationExpires = new Date(Date.now() + OTP_TTL_MS);
     await user.save();
 
-    const emailResult = await sendOtpEmail(user.email, code, 'verify');
+    // Send in the background — don't block the response on SMTP (see /register/initiate).
+    const emailPromise = sendOtpEmail(user.email, code, 'verify');
+    let emailResult: SendOtpResult | undefined;
+    if (config.isEmailReal) {
+      emailPromise.catch((e) => console.error('OTP email background send failed:', e));
+    } else {
+      emailResult = await emailPromise;
+    }
 
     // Refresh the pending token so the new 10-min window starts now.
     const newPendingToken = issuePendingToken(user._id.toString(), 'verify');
@@ -354,7 +372,7 @@ router.post('/register/resend-otp', async (req: Request, res: Response): Promise
       success: true,
       message: 'A new verification code has been sent.',
       pendingToken: newPendingToken,
-      ...(emailResult.devCode ? { devCode: emailResult.devCode, devMode: true } : {}),
+      ...(emailResult?.devCode ? { devCode: emailResult.devCode, devMode: true } : {}),
     });
   } catch (error) {
     console.error('Resend OTP error:', error);
@@ -628,11 +646,18 @@ router.post('/forgot-password', async (req: Request, res: Response): Promise<voi
     user.passwordResetExpires = new Date(Date.now() + OTP_TTL_MS);
     await user.save();
 
-    const emailResult = await sendOtpEmail(user.email, code, 'reset');
+    // Send in the background — don't block the response on SMTP (see /register/initiate).
+    const emailPromise = sendOtpEmail(user.email, code, 'reset');
+    let emailResult: SendOtpResult | undefined;
+    if (config.isEmailReal) {
+      emailPromise.catch((e) => console.error('OTP email background send failed:', e));
+    } else {
+      emailResult = await emailPromise;
+    }
 
     res.json({
       ...genericSuccess,
-      ...(emailResult.devCode ? { devCode: emailResult.devCode, devMode: true } : {}),
+      ...(emailResult?.devCode ? { devCode: emailResult.devCode, devMode: true } : {}),
     });
   } catch (error) {
     console.error('Forgot password error:', error);

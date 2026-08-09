@@ -14,7 +14,7 @@ export function generateOtpCode(): string {
  */
 export async function hashOtpCode(code: string): Promise<string> {
   // Lighter salt rounds than passwords — these codes are short-lived (10 min).
-  return bcrypt.hash(code, 10);
+  return bcrypt.hash(code, 8);
 }
 
 /**
