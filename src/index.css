@@ -1,0 +1,259 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Custom CSS Variables */
+:root {
+  --primary-blue: #0369a1;
+  --primary-blue-dark: #075985;
+  --secondary-gray: #64748b;
+  --background-white: #ffffff;
+  --background-black: #0f172a;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --border-light: #e2e8f0;
+  --border-dark: #334155;
+}
+
+/* Dark theme variables */
+.dark {
+  --background-white: #0f172a;
+  --background-black: #ffffff;
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --border-light: #334155;
+  --border-dark: #e2e8f0;
+}
+
+/* Global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family:
+    'Inter',
+    system-ui,
+    -apple-system,
+    sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--background-white);
+  color: var(--text-primary);
+  transition:
+    background-color 0.2s ease-in-out,
+    color 0.2s ease-in-out;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Utility classes */
+.container-safe {
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
+
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--secondary-gray);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-blue);
+}
+
+/* Hide scrollbar utility */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Focus styles for accessibility */
+.focus-ring:focus {
+  outline: 2px solid var(--primary-blue);
+  outline-offset: 2px;
+}
+
+/* Animation classes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.3s ease-out;
+}
+
+/* Flashcard 3D flip effect */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* Tailwind custom utilities for flashcard */
+.\[backface-visibility\:hidden\] {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.\[transform\:rotateY\(180deg\)\] {
+  transform: rotateY(180deg);
+}
+
+
+/* Hover effect styles */
+.hover-effect-dark-blue {
+  transition: all 0.2s ease-in-out;
+}
+
+.hover-effect-dark-blue:hover {
+  background-color: #1e3a8a; /* dark blue */
+  transform: scale(1.02);
+}
+
+.hover-effect-purple {
+  transition: all 0.2s ease-in-out;
+}
+
+.hover-effect-purple:hover {
+  background-color: #7F00FF; /* electric purple */
+  transform: scale(1.02);
+}
+
+/* Button hover effects */
+button:hover {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Purple buttons hover to darker purple */
+.bg-purple-600:hover {
+  background-color: #6b21a8 !important;
+}
+
+/* Blue buttons hover to electric purple */
+.bg-blue-600:hover {
+  background-color: #7F00FF !important;
+}
+
+/* Dark blue buttons hover to electric purple */
+.bg-primary-600:hover {
+  background-color: #7F00FF !important;
+}
+
+/* ------------------------------------------------------------------ */
+/* Luxurious "Purple Space" custom cursor — desktop / mouse only.      */
+/* Touch devices (pointer: coarse) keep their native behavior.         */
+/* ------------------------------------------------------------------ */
+@media (pointer: fine) {
+  /*
+   * Base arrow on the root elements only. `cursor` is an inherited property,
+   * so every non-interactive descendant picks it up automatically. We avoid a
+   * universal `*` rule on purpose: it would re-apply the arrow (with
+   * !important) to children nested inside buttons/links, making the cursor
+   * flicker between the arrow and the orb as the pointer crosses them.
+   */
+  html,
+  body {
+    cursor: url('/cursors/cursor-default.svg') 6 3, auto;
+  }
+
+  /* Interactive elements get the glowing orb */
+  a,
+  button,
+  [role='button'],
+  select,
+  summary,
+  label[for],
+  input[type='button'],
+  input[type='submit'],
+  input[type='reset'],
+  input[type='checkbox'],
+  input[type='radio'],
+  input[type='range'],
+  .cursor-pointer {
+    cursor: url('/cursors/cursor-pointer.svg') 16 16, pointer !important;
+  }
+
+  /* Children of interactive elements inherit the orb so there is no flicker */
+  a *,
+  button *,
+  [role='button'] *,
+  .cursor-pointer * {
+    cursor: inherit;
+  }
+
+  /* Text fields get the purple I-beam */
+  input,
+  textarea,
+  [contenteditable='true'] {
+    cursor: url('/cursors/cursor-text.svg') 16 16, text !important;
+  }
+
+  /* Disabled controls fall back to the arrow */
+  button:disabled,
+  input:disabled,
+  textarea:disabled,
+  select:disabled,
+  [aria-disabled='true'] {
+    cursor: url('/cursors/cursor-default.svg') 6 3, not-allowed !important;
+  }
+}

@@ -1,0 +1,4789 @@
+/*   Course Structure
+    Total Content: 10 Levels (Pre-A1 to C1).
+
+    Per Level: 8 Lessons + 1 Final Exam.
+
+    Per Lesson: 5 exercises (mix of multiple-choice, listening, and reading).
+
+    Final Exam: 20 questions recapping the entire level.
+
+    Level Breakdown (CEFR)
+    Level 1: Pre-A1 (Absolute Beginner)
+
+    Level 2: A1
+
+    Level 3: A1 / A2
+
+    Level 4: A2
+
+    Level 5: A2 / B1
+
+    Level 6: B1
+
+    Level 7: B1 / B2
+
+    Level 8: B2
+
+    Level 9: B2 / C1
+
+    Level 10: C1
+
+    Question Guidelines
+    Answers: Clearly mark the correct option with a checkmark (✅).
+    Difficulty: Keep questions strictly matched to the targeted CEFR level (e.g., Level 1 must be strictly Pre-A1).
+*/
+
+Level 1 – Pre-A1 (Absolute Beginner)
+Lesson 1 – The Alphabet (A to M)
+
+What is the very first letter of the English alphabet?
+
+A ✅
+
+B
+
+C
+
+D
+
+Which letter comes immediately after "C"?
+
+B
+
+D ✅
+
+E
+
+F
+
+Listen to the letter and select which one you hear: "Ehh"
+
+A
+
+I
+
+E ✅
+
+O
+
+What is the small (lowercase) version of the letter "H"?
+
+b
+
+n
+
+h ✅
+
+m
+
+Which sequence shows the correct order?
+
+A C B
+
+F G H ✅
+
+J L K
+
+D F E
+
+Lesson 2 – The Alphabet (N to Z)
+
+Which letter comes immediately after "N"?
+
+M
+
+O ✅
+
+P
+
+Q
+
+What is the last letter of the English alphabet?
+
+X
+
+Y
+
+W
+
+Z ✅
+
+Listen to the letter and select which one you hear: "Ess"
+
+C
+
+X
+
+S ✅
+
+Z
+
+What is the small (lowercase) version of the letter "R"?
+
+p
+
+r ✅
+
+n
+
+q
+
+Which sequence shows the correct order?
+
+X Y Z ✅
+
+X Z Y
+
+Z Y X
+
+Y X Z
+
+Lesson 3 – Basic Greetings
+
+What is a friendly way to say "hello"?
+
+Goodbye
+
+Hi ✅
+
+No
+
+Yes
+
+What do you say when you leave?
+
+Hello
+
+Welcome
+
+Goodbye ✅
+
+Please
+
+Listen to the phrase and select what you hear: "Good morning"
+
+Good night
+
+Good morning ✅
+
+Hello
+
+Goodbye
+
+What do you say when you go to sleep?
+
+Good morning
+
+Good afternoon
+
+Good night ✅
+
+Hello
+
+Which word is used to answer a question positively?
+
+No
+
+Stop
+
+Yes ✅
+
+Bye
+
+Lesson 4 – Numbers 1 to 5
+
+What is the first number?
+
+2
+
+0
+
+1 ✅
+
+3
+
+How do you spell the number "2"?
+
+Too
+
+Two ✅
+
+Tow
+
+Tu
+
+Listen and select the number you hear: "Three"
+
+1
+
+2
+
+3 ✅
+
+4
+
+Which number comes after 4?
+
+3
+
+5 ✅
+
+6
+
+2
+
+Which word matches the number "4"?
+
+Four ✅
+
+Five
+
+One
+
+Two
+
+Lesson 5 – Numbers 6 to 10
+
+What number comes right after 5?
+
+4
+
+6 ✅
+
+7
+
+8
+
+How do you spell the number "10"?
+
+Tin
+
+Ten ✅
+
+Tan
+
+Ton
+
+Listen and select the number you hear: "Eight"
+
+7
+
+8 ✅
+
+9
+
+10
+
+Which sequence is in the correct order?
+
+6, 8, 7, 9
+
+5, 6, 7, 8 ✅
+
+9, 8, 7, 6
+
+10, 9, 8, 7
+
+Which word matches the number "7"?
+
+Six
+
+Eight
+
+Seven ✅
+
+Nine
+
+Lesson 6 – Basic Colors
+
+What color is an apple or a strawberry?
+
+Blue
+
+Red ✅
+
+Green
+
+Yellow
+
+What color is the sun?
+
+Black
+
+White
+
+Yellow ✅
+
+Blue
+
+Listen and select the color you hear: "Blue"
+
+Red
+
+Green
+
+Blue ✅
+
+Black
+
+Which color is dark, like the sky at night?
+
+White
+
+Pink
+
+Black ✅
+
+Yellow
+
+How do you spell the color of grass?
+
+Grene
+
+Green ✅
+
+Grin
+
+Gren
+
+Lesson 7 – Simple Classroom Objects
+
+What do you use to write on paper?
+
+A book
+
+A pen ✅
+
+A chair
+
+A desk
+
+What do you open to read?
+
+A bag
+
+A desk
+
+A book ✅
+
+A pen
+
+Listen and select the object you hear: "Bag"
+
+Book
+
+Pen
+
+Chair
+
+Bag ✅
+
+Where do you sit in a classroom?
+
+On a chair ✅
+
+On a pen
+
+On a book
+
+In a bag
+
+What do you write on?
+
+Paper ✅
+
+Chair
+
+Bag
+
+Water
+
+Lesson 8 – Simple Pronouns (I, You, He, She)
+
+Which word do you use to talk about yourself?
+
+You
+
+He
+
+I ✅
+
+She
+
+Which word do you use to talk about a boy?
+
+She
+
+I
+
+You
+
+He ✅
+
+Listen to the word and select what you hear: "She"
+
+He
+
+She ✅
+
+I
+
+You
+
+Which word do you use to talk about a girl?
+
+He
+
+I
+
+She ✅
+
+You
+
+Which word do you use when talking directly to another person?
+
+I
+
+He
+
+You ✅
+
+She
+
+
+Level 1 – Final Exam
+1. What is the small (lowercase) version of the letter "H"?
+
+b
+
+n
+
+h ✅
+
+m
+
+2. Which letter comes immediately before "Z"?
+
+W
+
+X
+
+Y ✅
+
+V
+
+3. What is the first letter of the English alphabet?
+
+A ✅
+
+B
+
+Z
+
+M
+
+4. Which sequence shows the correct order of letters?
+
+X Z Y
+
+X Y Z ✅
+
+Z Y X
+
+Y X Z
+
+5. What do you say to someone when you see them in the morning?
+
+Good night
+
+Good morning ✅
+
+Goodbye
+
+See you later
+
+6. What do you say when you leave?
+
+Hello
+
+Welcome
+
+Goodbye ✅
+
+Please
+
+7. What do you say when you go to sleep?
+
+Good morning
+
+Good afternoon
+
+Good night ✅
+
+Hello
+
+8. How do you spell the number "2"?
+
+Too
+
+Two ✅
+
+Tow
+
+Tu
+
+9. Which number comes right after 4?
+
+3
+
+5 ✅
+
+6
+
+2
+
+10. Listen and select the number you hear: "Three"
+
+1
+
+2
+
+3 ✅
+
+4
+
+11. Which number comes right after 6?
+
+5
+
+7 ✅
+
+8
+
+9
+
+12. How do you spell the number "10"?
+
+Tin
+
+Ten ✅
+
+Tan
+
+Ton
+
+13. What color is the sun?
+
+Black
+
+White
+
+Yellow ✅
+
+Blue
+
+14. What color is an apple or a strawberry?
+
+Blue
+
+Red ✅
+
+Green
+
+Yellow
+
+15. How do you spell the color of grass?
+
+Grene
+
+Green ✅
+
+Grin
+
+Gren
+
+16. What do you use to write on paper?
+
+A book
+
+A pen ✅
+
+A chair
+
+A desk
+
+17. What do you open to read?
+
+A bag
+
+A desk
+
+A book ✅
+
+A pen
+
+18. Which word do you use to talk about a boy?
+
+She
+
+I
+
+You
+
+He ✅
+
+19. Which word do you use to talk about a girl?
+
+He
+
+I
+
+She ✅
+
+You
+
+20. Which word do you use to talk about yourself?
+
+You
+
+He
+
+I ✅
+
+She
+
+
+
+Level 2 – A1 (Elementary)
+Lesson 1 – Personal Information
+
+Where are you from?
+
+I am from Spain. ✅
+
+I am 20 years old.
+
+My name is John.
+
+I am fine.
+
+How old are you?
+
+I am fine.
+
+I am a student.
+
+I am 25 years old. ✅
+
+I live in London.
+
+Complete the sentence: "My name _______ Sarah."
+
+am
+
+is ✅
+
+are
+
+be
+
+What do you say when you meet someone for the first time?
+
+Nice to meet you. ✅
+
+Goodbye.
+
+Thank you.
+
+Excuse me.
+
+What is your job?
+
+I am a doctor. ✅
+
+I am from Canada.
+
+I am married.
+
+I am happy.
+
+Lesson 2 – Family Members
+
+My mother's husband is my _______.
+
+brother
+
+uncle
+
+father ✅
+
+son
+
+Complete the sentence: "I have two _______."
+
+sister
+
+sisters ✅
+
+brother
+
+mother
+
+Who is your uncle's son?
+
+My brother
+
+My cousin ✅
+
+My father
+
+My grandfather
+
+What is the opposite of "son"?
+
+Daughter ✅
+
+Mother
+
+Sister
+
+Aunt
+
+Complete the sentence: "This is _______ brother. His name is Paul."
+
+my ✅
+
+he
+
+she
+
+me
+
+Lesson 3 – Everyday Objects
+
+What do you use to open a locked door?
+
+A key ✅
+
+A watch
+
+A wallet
+
+A window
+
+Where do you usually keep your money and credit cards?
+
+In a table
+
+In a wallet ✅
+
+In a book
+
+In a pen
+
+You use a _______ to call people and check the internet.
+
+television
+
+clock
+
+smartphone ✅
+
+notebook
+
+What tells you the time on your wrist?
+
+A ring
+
+A watch ✅
+
+A key
+
+A phone
+
+Complete the sentence: "Where _______ my glasses?"
+
+is
+
+am
+
+are ✅
+
+be
+
+Lesson 4 – Time and Days
+
+Which day comes after Monday?
+
+Wednesday
+
+Sunday
+
+Tuesday ✅
+
+Friday
+
+How many days are in one week?
+
+5
+
+7 ✅
+
+12
+
+30
+
+It is 8:30. How do you say this?
+
+Eight o'clock
+
+Half past eight ✅
+
+Quarter to eight
+
+Eight thirty-five
+
+Which of these is a weekend day?
+
+Thursday
+
+Monday
+
+Saturday ✅
+
+Tuesday
+
+Complete the sentence: "The English lesson is _______ Tuesday."
+
+at
+
+on ✅
+
+in
+
+under
+
+Lesson 5 – Food and Drink
+
+Which of these is a fruit?
+
+Bread
+
+Banana ✅
+
+Milk
+
+Meat
+
+What do many people drink hot in the morning?
+
+Coffee ✅
+
+Water
+
+Juice
+
+Ice
+
+Which word is a drink?
+
+Rice
+
+Chicken
+
+Water ✅
+
+Cheese
+
+Complete the sentence: "I want a sandwich. I am _______."
+
+thirsty
+
+tired
+
+hungry ✅
+
+happy
+
+Which of these do you use to eat soup?
+
+A knife
+
+A fork
+
+A spoon ✅
+
+A plate
+
+Lesson 6 – Daily Activities
+
+What do you do at night in your bed?
+
+Cook
+
+Sleep ✅
+
+Work
+
+Study
+
+Complete the sentence: "Every morning, I _______ breakfast at 7 AM."
+
+eat ✅
+
+drink
+
+do
+
+go
+
+Complete the sentence: "He _______ to the office by train."
+
+go
+
+goes ✅
+
+going
+
+went
+
+What do you do with a book?
+
+Write
+
+Read ✅
+
+Listen
+
+Speak
+
+Complete the sentence: "I always _______ my teeth after eating."
+
+watch
+
+brush ✅
+
+clean
+
+make
+
+Lesson 7 – Simple Adjectives
+
+What is the opposite of "hot"?
+
+Cold ✅
+
+Warm
+
+Big
+
+New
+
+An elephant is large, but a mouse is _______.
+
+tall
+
+small ✅
+
+fast
+
+heavy
+
+Complete the sentence: "This book is not cheap. It is _______."
+
+free
+
+expensive ✅
+
+easy
+
+old
+
+What is the opposite of "happy"?
+
+Angry
+
+Sad ✅
+
+Good
+
+Beautiful
+
+Complete the sentence: "The exam was not difficult. It was very _______."
+
+hard
+
+slow
+
+easy ✅
+
+young
+
+Lesson 8 – Places in a Town
+
+Where do you go to buy food and groceries?
+
+The park
+
+The supermarket ✅
+
+The hospital
+
+The cinema
+
+Where do children go to learn?
+
+A bank
+
+A school ✅
+
+A restaurant
+
+A hotel
+
+You go to the _______ when you are very sick.
+
+hospital ✅
+
+park
+
+shop
+
+station
+
+Where can you sit on grass and see trees?
+
+In a room
+
+In a park ✅
+
+In a bank
+
+In a kitchen
+
+Complete the sentence: "I need to catch a train at the _______."
+
+station ✅
+
+airport
+
+market
+
+library
+
+
+Level 2 – Final Exam
+1. What do you say when you meet someone for the first time?
+
+Nice to meet you. ✅
+
+Goodbye.
+
+Thank you.
+
+Excuse me.
+
+2. My father's sister is my _______.
+
+aunt ✅
+
+uncle
+
+sister
+
+mother
+
+3. What do you use to open a locked door?
+
+A key ✅
+
+A watch
+
+A wallet
+
+A window
+
+4. Which day comes after Monday?
+
+Tuesday ✅
+
+Wednesday
+
+Sunday
+
+Friday
+
+5. Listen and select the word you hear: "Breakfast"
+
+Lunch
+
+Dinner
+
+Breakfast ✅
+
+Food
+
+6. What do many people drink hot in the morning?
+
+Coffee ✅
+
+Water
+
+Juice
+
+Ice
+
+7. What do you do at night in your bed?
+
+Sleep ✅
+
+Cook
+
+Work
+
+Study
+
+8. What is the opposite of "hot"?
+
+Cold ✅
+
+Warm
+
+Big
+
+New
+
+9. Where do you go to buy food and groceries?
+
+The supermarket ✅
+
+The park
+
+The hospital
+
+The cinema
+
+10. Listen to the sentence: "He is a doctor." What is his job?
+
+Teacher
+
+Doctor ✅
+
+Driver
+
+Student
+
+11. Where are you from?
+
+I am from Spain. ✅
+
+I am 20 years old.
+
+My name is John.
+
+I am fine.
+
+12. Complete the sentence: "This is _______ brother. His name is Paul."
+
+my ✅
+
+he
+
+she
+
+me
+
+13. You use a _______ to call people and check the internet.
+
+smartphone ✅
+
+television
+
+clock
+
+notebook
+
+14. How many days are in one week?
+
+7 ✅
+
+5
+
+12
+
+30
+
+15. Listen and select the number you hear: "Twelve"
+
+2
+
+20
+
+12 ✅
+
+7
+
+16. Which word is a drink?
+
+Water ✅
+
+Rice
+
+Chicken
+
+Cheese
+
+17. Complete the sentence: "He _______ to the office by train."
+
+goes ✅
+
+go
+
+going
+
+went
+
+18. An elephant is large, but a mouse is _______.
+
+small ✅
+
+tall
+
+fast
+
+heavy
+
+19. Where do children go to learn?
+
+A school ✅
+
+A bank
+
+A restaurant
+
+A hotel
+
+20. Complete the sentence: "This book is not cheap. It is _______."
+
+expensive ✅
+
+free
+
+easy
+
+old
+
+
+Lesson 1 – Free Time Activities
+
+What do you need if you want to play tennis?
+
+A racket and a ball ✅
+
+A book and a pen
+
+A bicycle and a helmet
+
+A guitar and a piano
+
+Complete the sentence: "I really enjoy _______ photos of nature."
+
+take
+
+taking ✅
+
+took
+
+taken
+
+Which activity do you do in a swimming pool?
+
+Running
+
+Swimming ✅
+
+Reading
+
+Cooking
+
+Complete the sentence: "He doesn't like playing video games. He thinks they are _______."
+
+boring ✅
+
+exciting
+
+fun
+
+interesting
+
+How often do you go to the cinema?
+
+Yes, I do.
+
+Twice a month. ✅
+
+With my brother.
+
+Tomorrow afternoon.
+
+Lesson 2 – House and Rooms
+
+Where do you usually cook food in a house?
+
+In the bedroom
+
+In the bathroom
+
+In the kitchen ✅
+
+In the garage
+
+Complete the sentence: "The keys are _______ the kitchen table."
+
+in
+
+on ✅
+
+underneath of
+
+between
+
+What do you use to wash your hands and face in the bathroom?
+
+A sofa
+
+A sink ✅
+
+A fridge
+
+A wardrobe
+
+Where do people keep their clothes?
+
+In a wardrobe ✅
+
+In a cooker
+
+In a mirror
+
+In a armchair
+
+Complete the sentence: "There _______ three chairs in the dining room."
+
+is
+
+am
+
+are ✅
+
+be
+
+Lesson 3 – Weather and Seasons
+
+What do you take with you when it is raining?
+
+An umbrella ✅
+
+Sunglasses
+
+A swimsuit
+
+A fan
+
+Which season is usually the coldest?
+
+Summer
+
+Spring
+
+Autumn
+
+Winter ✅
+
+Complete the sentence: "Look outside! The sun is shining and the sky is _______."
+
+cloudy
+
+clear ✅
+
+stormy
+
+dark
+
+What is the weather like when you cannot see far because of a white cloud near the ground?
+
+Sunny
+
+Windy
+
+Foggy ✅
+
+Dry
+
+Complete the sentence: "It is very _______ today. Hold onto your hat!"
+
+hot
+
+windy ✅
+
+quiet
+
+wet
+
+Lesson 4 – Past Events (Simple Past Basics)
+
+Complete the sentence: "Yesterday, I _______ to the supermarket and bought some fruit."
+
+go
+
+went ✅
+
+going
+
+goes
+
+Complete the sentence: "They _______ at home last night. They went to a restaurant."
+
+was not
+
+were not ✅
+
+are not
+
+did not
+
+What is the past tense of the verb "watch"?
+
+Watchy
+
+Watching
+
+Watched ✅
+
+Wrote
+
+Complete the sentence: "Did you _______ the English homework yesterday?"
+
+finish ✅
+
+finished
+
+finishing
+
+finishes
+
+Where were you born?
+
+I born in London.
+
+I was born in London. ✅
+
+I am born in London.
+
+I were born in London.
+
+Lesson 5 – Health and Body
+
+What part of your body do you use to listen to music?
+
+Your eyes
+
+Your nose
+
+Your ears ✅
+
+Your mouth
+
+Complete the sentence: "I need to see a doctor because I have a bad _______."
+
+headache ✅
+
+happy
+
+haircut
+
+holiday
+
+What should you do if you feel very tired?
+
+Go to run
+
+Get some rest ✅
+
+Eat spicy food
+
+Watch a loud movie
+
+Which part of the body connects your foot to your leg?
+
+The elbow
+
+The finger
+
+The ankle ✅
+
+The shoulder
+
+Complete the sentence: "You should wash your _______ before you eat."
+
+teeth
+
+hands ✅
+
+hair
+
+ears
+
+Lesson 6 – Clothes and Shopping
+
+What do you wear on your feet when it is cold or raining outside?
+
+T-shirts
+
+Boots ✅
+
+Gloves
+
+Hats
+
+Complete the sentence: "Excuse me, how _______ is this blue jacket?"
+
+many
+
+much ✅
+
+cost
+
+price
+
+Where do you go to try on clothes before buying them?
+
+The cash desk
+
+The changing room ✅
+
+The supermarket
+
+The window
+
+What do you wear around your neck when it is freezing in winter?
+
+A belt
+
+A scarf ✅
+
+Socks
+
+A ring
+
+Complete the sentence: "These shoes are too small. They don't _______ me."
+
+fit ✅
+
+suit
+
+wear
+
+look
+
+Lesson 7 – Transport and Travel
+
+How do you go across the ocean to another continent?
+
+By bicycle
+
+By train
+
+By airplane ✅
+
+By walking
+
+Complete the sentence: "We need to buy a _______ before we get on the bus."
+
+ticket ✅
+
+passport
+
+map
+
+suitcase
+
+What do you call a person who travels on a bus or train but is not the driver?
+
+A pilot
+
+A passenger ✅
+
+A customer
+
+A guest
+
+Complete the sentence: "Don't worry, you won't _______ the train. It leaves in one hour."
+
+lose
+
+miss ✅
+
+catch
+
+drop
+
+Where do airplanes land and take off?
+
+At the station
+
+At the port
+
+At the airport ✅
+
+At the garage
+
+Lesson 8 – Making Plans
+
+Complete the sentence: "Tomorrow, I am going to _______ my grandparents."
+
+visit ✅
+
+visiting
+
+visited
+
+visits
+
+What are you doing this weekend?
+
+I went to the park.
+
+I am meeting my friends. ✅
+
+I am twenty years old.
+
+I like pizza.
+
+Complete the sentence: "Look at those dark clouds! It _______ rain soon."
+
+is going to ✅
+
+goes to
+
+will to
+
+shall
+
+Which word indicates a plan for the future?
+
+Yesterday
+
+Last week
+
+Next month ✅
+
+Ago
+
+Complete the sentence: "We are _______ a party next Saturday. Can you come?"
+
+having ✅
+
+had
+
+have
+
+has
+
+Level 3 – Final Exam
+1. What do you need if you want to play tennis?
+
+A racket and a ball ✅
+
+A book and a pen
+
+A bicycle and a helmet
+
+A guitar and a piano
+
+2. Complete the sentence: "I really enjoy _______ photos of nature."
+
+take
+
+taking ✅
+
+took
+
+taken
+
+3. Where do you usually cook food in a house?
+
+In the bedroom
+
+In the kitchen ✅
+
+In the bathroom
+
+In the garage
+
+4. Complete the sentence: "The keys are _______ the kitchen table."
+
+on ✅
+
+in
+
+underneath of
+
+between
+
+5. Listen and select the word you hear: "Umbrella"
+
+Raincoat
+
+Sunglasses
+
+Umbrella ✅
+
+Boots
+
+6. Which season is usually the coldest?
+
+Summer
+
+Spring
+
+Winter ✅
+
+Autumn
+
+7. Complete the sentence: "Yesterday, I _______ to the supermarket and bought some fruit."
+
+go
+
+went ✅
+
+going
+
+goes
+
+8. What is the past tense of the verb "watch"?
+
+Watchy
+
+Watching
+
+Watched ✅
+
+Wrote
+
+9. Listen to the phrase and select what you hear: "I have a headache."
+
+I have a stomach ache.
+
+I have a headache. ✅
+
+I have a toothache.
+
+I feel great today.
+
+10. Which part of the body connects your foot to your leg?
+
+The ankle ✅
+
+The elbow
+
+The finger
+
+The shoulder
+
+11. What do you wear around your neck when it is freezing in winter?
+
+A scarf ✅
+
+A belt
+
+Socks
+
+A ring
+
+12. Complete the sentence: "Excuse me, how _______ is this blue jacket?"
+
+much ✅
+
+many
+
+cost
+
+price
+
+13. How do you go across the ocean to another continent?
+
+By airplane ✅
+
+By bicycle
+
+By train
+
+By walking
+
+14. Complete the sentence: "We need to buy a _______ before we get on the bus."
+
+ticket ✅
+
+passport
+
+map
+
+suitcase
+
+15. Listen to the sentence: "We are going to visit London next week." What is the plan?
+
+To move to London
+
+To visit London ✅
+
+To leave London
+
+To work in London
+
+16. Complete the sentence: "Tomorrow, I am going to _______ my grandparents."
+
+visit ✅
+
+visiting
+
+visited
+
+visits
+
+17. Complete the sentence: "There _______ three chairs in the dining room."
+
+is
+
+am
+
+are ✅
+
+be
+
+18. What is the weather like when you cannot see far because of a white cloud near the ground?
+
+Foggy ✅
+
+Sunny
+
+Windy
+
+Dry
+
+19. Complete the sentence: "Did you _______ the English homework yesterday?"
+
+finish ✅
+
+finished
+
+finishing
+
+finishes
+
+20. Where do airplanes land and take off?
+
+At the airport ✅
+
+At the station
+
+At the port
+
+At the garage
+
+At the port
+
+At the garage
+
+Level 4 – A2 (Elementary)
+Lesson 1 – Comparative Adjectives
+
+Complete the sentence: "My new phone is _______ than my old one."
+
+fast
+
+faster ✅
+
+more fast
+
+fastest
+
+A Ferrari is _______ than a regular bicycle.
+
+expensiveer
+
+more expensive ✅
+
+most expensive
+
+as expensive
+
+Complete the sentence: "The weather today is _______ than it was yesterday."
+
+gooder
+
+better ✅
+
+best
+
+more good
+
+Canada is _______ than Spain.
+
+bigger ✅
+
+more big
+
+biggest
+
+biger
+
+Complete the sentence: "Learning English is _______ than I thought it would be."
+
+easier ✅
+
+easyer
+
+more easy
+
+easiest
+
+Lesson 2 – Experiences (Present Perfect Intro)
+
+Complete the sentence: "Have you ever _______ sushi before?"
+
+eat
+
+ate
+
+eaten ✅
+
+eating
+
+Complete the sentence: "I have _______ to Paris twice in my life."
+
+been ✅
+
+went
+
+go
+
+gone
+
+Complete the sentence: "She _______ never seen a whale in the ocean."
+
+have
+
+has ✅
+
+is
+
+did
+
+Complete the sentence: "We have _______ this movie three times already."
+
+watch
+
+watched ✅
+
+watching
+
+watches
+
+Have you finished your homework yet?
+
+Yes, I did.
+
+Yes, I have finished it. ✅
+
+Yes, I finished.
+
+No, I don't.
+
+Lesson 3 – Work and Careers
+
+What do you call a person who designs houses and buildings?
+
+A builder
+
+An architect ✅
+
+A pilot
+
+A journalist
+
+Complete the sentence: "She works in a hospital. She is a _______."
+
+nurse ✅
+
+teacher
+
+lawyer
+
+shop assistant
+
+What do you call the person who is in charge of a department or company?
+
+The client
+
+The manager ✅
+
+The guest
+
+The assistant
+
+Complete the sentence: "He works in a restaurant kitchen. He is a _______."
+
+waiter
+
+chef ✅
+
+cleaner
+
+driver
+
+What do you earn when you work a regular job?
+
+A bill
+
+A salary ✅
+
+A tax
+
+A price
+
+Lesson 4 – Modals of Ability and Obligation
+
+Complete the sentence: "When I was five years old, I _______ swim, but now I can."
+
+cannot
+
+could not ✅
+
+should not
+
+must not
+
+You _______ wear a seatbelt while driving a car. It is the law.
+
+must ✅
+
+should
+
+can
+
+might
+
+Complete the sentence: "If you feel sick, you _______ stay at home and rest."
+
+must to
+
+should ✅
+
+can to
+
+could to
+
+Complete the sentence: "Excuse me, _______ you help me carry this heavy bag?"
+
+must
+
+should
+
+could ✅
+
+shall
+
+You _______ smoke inside the hospital. It is strictly forbidden.
+
+don't have to
+
+must not ✅
+
+should not to
+
+cannot to
+
+Lesson 5 – Technology and Media
+
+What do you do when you save a file from the internet onto your computer?
+
+Upload
+
+Delete
+
+Download ✅
+
+Install
+
+Complete the sentence: "I accidentally _______ all my photos from my phone!"
+
+deleted ✅
+
+searched
+
+shared
+
+connected
+
+What part of a computer or smartphone shows you the images and text?
+
+The keyboard
+
+The mouse
+
+The screen ✅
+
+The speaker
+
+Complete the sentence: "You need a strong _______ to log into your email safely."
+
+website
+
+link
+
+password ✅
+
+screen
+
+What do you use to type text into a computer?
+
+A monitor
+
+A keyboard ✅
+
+A mouse
+
+A webcam
+
+Lesson 6 – Life Events
+
+Complete the sentence: "My brother _______ from university last summer."
+
+born
+
+graduated ✅
+
+married
+
+grew up
+
+When did they get married?
+
+They got married in 2018. ✅
+
+They are marrying in 2018.
+
+They marry in 2018.
+
+They have married in 2018.
+
+Complete the sentence: "We decided to _______ house because we needed more space."
+
+move ✅
+
+change
+
+leave
+
+stay
+
+Where did you grow up?
+
+I grew up in a small town. ✅
+
+I was grown up in a small town.
+
+I grow up in a small town.
+
+I am growing up in a small town.
+
+Complete the sentence: "She got a new _______ as a software engineer last week."
+
+career
+
+job ✅
+
+work
+
+office
+
+Lesson 7 – Superlative Adjectives
+
+Complete the sentence: "Mount Everest is the _______ mountain in the world."
+
+higher
+
+highest ✅
+
+most high
+
+highestly
+
+Which city is the _______ expensive city to live in?
+
+more
+
+most ✅
+
+much
+
+very
+
+Complete the sentence: "That was the _______ movie I have ever seen! It was terrible."
+
+badest
+
+worst ✅
+
+worse
+
+most bad
+
+Who is the _______ person in your family?
+
+tallest ✅
+
+taller
+
+most tall
+
+tallest city
+
+Complete the sentence: "This is the _______ comfortable sofa in the store."
+
+more
+
+most ✅
+
+very
+
+much
+
+Lesson 8 – Appearance and Personality
+
+What kind of hair does someone have if it forms loops and circles?
+
+Straight hair
+
+Curly hair ✅
+
+Bald
+
+Short hair
+
+Complete the sentence: "He is very _______. He always shares his things with others."
+
+selfish
+
+generous ✅
+
+lazy
+
+shy
+
+What do you call someone who makes people laugh easily?
+
+Serious
+
+Funny ✅
+
+Polite
+
+Quiet
+
+Complete the sentence: "She is very _______ and gets nervous when talking to new people."
+
+friendly
+
+shy ✅
+
+confident
+
+talkative
+
+What is the opposite of the word "polite"?
+
+Rude ✅
+
+Kind
+
+Honest
+
+Smart
+
+Level 4 – Final Exam
+1. Complete the sentence: "My new phone is _______ than my old one."
+
+faster ✅
+
+fast
+
+more fast
+
+fastest
+
+2. A Ferrari is _______ than a regular bicycle.
+
+more expensive ✅
+
+expensiveer
+
+most expensive
+
+as expensive
+
+3. Complete the sentence: "Have you ever _______ sushi before?"
+
+eaten ✅
+
+eat
+
+ate
+
+eating
+
+4. Complete the sentence: "I have _______ to Paris twice in my life."
+
+been ✅
+
+went
+
+go
+
+gone
+
+5. Listen and select the word you hear: "Architect"
+
+Engineer
+
+Architect ✅
+
+Builder
+
+Doctor
+
+6. Complete the sentence: "She works in a hospital. She is a _______."
+
+nurse ✅
+
+teacher
+
+lawyer
+
+shop assistant
+
+7. You _______ wear a seatbelt while driving a car. It is the law.
+
+must ✅
+
+should
+
+can
+
+might
+
+8. Complete the sentence: "When I was five years old, I _______ swim, but now I can."
+
+could not ✅
+
+cannot
+
+should not
+
+must not
+
+9. Listen to the phrase and select what you hear: "Download the file."
+
+Delete the file.
+
+Download the file. ✅
+
+Upload the file.
+
+Share the file.
+
+10. What part of a computer or smartphone shows you the images and text?
+
+The screen ✅
+
+The keyboard
+
+The mouse
+
+The speaker
+
+11. Complete the sentence: "My brother _______ from university last summer."
+
+graduated ✅
+
+born
+
+married
+
+grew up
+
+12. Complete the sentence: "We decided to _______ house because we needed more space."
+
+move ✅
+
+change
+
+leave
+
+stay
+
+13. Complete the sentence: "Mount Everest is the _______ mountain in the world."
+
+highest ✅
+
+higher
+
+most high
+
+highestly
+
+14. Which city is the _______ expensive city to live in?
+
+most ✅
+
+more
+
+much
+
+very
+
+15. Listen to the sentence: "He has curly hair." What does his hair look like?
+
+It is straight.
+
+It forms loops and circles. ✅
+
+He has no hair.
+
+It is very long.
+
+16. Complete the sentence: "He is very _______. He always shares his things with others."
+
+generous ✅
+
+selfish
+
+lazy
+
+shy
+
+17. Complete the sentence: "The weather today is _______ than it was yesterday."
+
+better ✅
+
+gooder
+
+best
+
+more good
+
+18. Complete the sentence: "She _______ never seen a whale in the ocean."
+
+has ✅
+
+have
+
+is
+
+did
+
+19. Complete the sentence: "If you feel sick, you _______ stay at home and rest."
+
+should ✅
+
+must to
+
+can to
+
+could to
+
+20. That was the _______ movie I have ever seen! It was terrible.
+
+worst ✅
+
+badest
+
+worse
+
+most bad
+
+
+
+Level 5 – A2/B1 (Pre-Intermediate)
+Lesson 1 – Past Simple vs. Present Perfect
+
+Complete the sentence: "I _______ my keys. I can't find them anywhere."
+lost
+have lost ✅
+lose
+am losing
+
+Complete the sentence: "She _______ to Japan in 2019."
+has gone
+goes
+went ✅
+have been
+
+Complete the sentence: "_______ you ever eaten octopus?"
+Did
+Have ✅
+Do
+Are
+
+Complete the sentence: "We have lived in this city _______ ten years."
+since
+for ✅
+during
+until
+
+Complete the sentence: "I _______ that movie last night. It was great."
+have seen
+saw ✅
+see
+was seeing
+
+Lesson 2 – Future Forms (Will vs. Going to)
+
+Complete the sentence: "Look at those dark clouds. It _______ rain."
+will
+is going to ✅
+shall
+going to
+
+Complete the sentence: "I forgot my wallet!" — "Don't worry, I _______ pay for your coffee."
+am going to
+will ✅
+pay
+am paying
+
+Complete the sentence: "What are your plans for the weekend?" — "I _______ visit my grandparents."
+will
+am going to ✅
+visit
+will going to
+
+Complete the sentence: "I think cars _______ fly in the future."
+are going to
+will ✅
+fly
+are flying
+
+Complete the sentence: "We _______ a party on Saturday. Do you want to come?"
+will have
+are having ✅
+have
+shall have
+
+Lesson 3 – First Conditional
+
+Complete the sentence: "If it rains tomorrow, we _______ at home."
+stay
+will stay ✅
+would stay
+stayed
+
+Complete the sentence: "You will fail the exam if you _______ study."
+don't ✅
+won't
+didn't
+aren't
+
+Complete the sentence: "If she _______ early, we will catch the train."
+arrives ✅
+will arrive
+arrive
+arrived
+
+Complete the sentence: "I will call you when I _______ at the hotel."
+will arrive
+arrive ✅
+arrived
+am arriving
+
+Complete the sentence: "What will you do if you _______ the job?"
+won't get
+don't get ✅
+didn't get
+not get
+
+Lesson 4 – Modals of Possibility (Might, May, Could)
+
+Complete the sentence: "Take an umbrella. It _______ rain later."
+might ✅
+must
+should
+can
+
+Complete the sentence: "Where is Sarah?" — "I'm not sure. She _______ be in the library."
+can
+must
+could ✅
+should
+
+Complete the sentence: "You _______ be right, but I want to check the facts first."
+must
+may ✅
+shall
+will
+
+Complete the sentence: "It _______ snow tomorrow, but the forecast says it's unlikely."
+might ✅
+must
+can
+should
+
+Complete the sentence: "Do not touch that wire! It _______ be dangerous."
+could ✅
+must to
+should
+can to
+
+Lesson 5 – Gerunds and Infinitives Basics
+
+Complete the sentence: "I really enjoy _______ books in my free time."
+to read
+read
+reading ✅
+to reading
+
+Complete the sentence: "She wants _______ a doctor when she grows up."
+be
+being
+to be ✅
+to being
+
+Complete the sentence: "He finished _______ his homework at 8 PM."
+to do
+doing ✅
+do
+does
+
+Complete the sentence: "We decided _______ to Italy for our summer holiday."
+going
+go
+to go ✅
+to going
+
+Complete the sentence: "I don't mind _______ you with your project."
+to help
+helping ✅
+help
+helped
+
+Lesson 6 – Vocabulary: Travel and Environment
+
+What do you need to show at the airport before you can get on the plane?
+A boarding pass ✅
+A receipt
+A menu
+A map
+
+Complete the sentence: "We need to protect the _______ by recycling plastic."
+earthquake
+environment ✅
+pollution
+weather
+
+What is the place where you wait for a train called?
+The port
+The runway
+The platform ✅
+The gate
+
+Complete the sentence: "Too many cars in the city cause a lot of air _______."
+pollution ✅
+protect
+plastic
+global
+
+What is the area of sand or stones next to the sea called?
+The mountain
+The desert
+The beach ✅
+The forest
+
+Lesson 7 – Vocabulary: Education and Work
+
+Complete the sentence: "After high school, I want to go to _______ to study law."
+nursery
+university ✅
+primary school
+library
+
+What do you call the money you pay to the government from your salary?
+Tax ✅
+Tip
+Change
+Receipt
+
+Complete the sentence: "He lost his job, so he is currently _______."
+employer
+unemployed ✅
+retired
+promotion
+
+Complete the sentence: "In our science _______, we did an experiment with chemicals."
+break
+lesson ✅
+uniform
+term
+
+What do you call a formal meeting where someone asks you questions to see if you are suitable for a job?
+An exam
+An interview ✅
+A presentation
+A degree
+
+Lesson 8 – Basic Passive Voice
+
+Complete the sentence: "Romeo and Juliet _______ by William Shakespeare."
+writes
+was written ✅
+wrote
+is written
+
+Complete the sentence: "Coffee _______ in Brazil and exported around the world."
+is grown ✅
+grew
+grows
+was grown
+
+Complete the sentence: "The Mona Lisa _______ in the Louvre Museum in Paris."
+is kept ✅
+kept
+keeps
+are kept
+
+Complete the sentence: "My car _______ stolen last night!"
+is
+was ✅
+has
+had
+
+Complete the sentence: "Millions of emails _______ every single day."
+are sent ✅
+send
+is sent
+were sent
+
+Level 5 – Final Exam
+Complete the sentence: "I _______ to London three times in my life."
+went
+have been ✅
+go
+was
+
+Complete the sentence: "If you eat too much candy, you _______ a stomach ache."
+get
+will get ✅
+would get
+got
+
+Complete the sentence: "Look out! That tree _______ fall!"
+will
+is going to ✅
+shall
+might
+
+Complete the sentence: "We have been friends _______ we were little kids."
+since ✅
+for
+until
+during
+
+Complete the sentence: "Where is John?" — "He _______ be in the garden, but I'm not sure."
+must
+should
+might ✅
+will
+
+Complete the sentence: "I promise I _______ tell anyone your secret."
+don't
+won't ✅
+am not going to
+haven't
+
+Complete the sentence: "She promised _______ me with the cooking."
+to help ✅
+helping
+help
+helped
+
+Complete the sentence: "He avoids _______ driving in heavy traffic."
+to drive
+driving ✅
+drive
+drives
+
+Complete the sentence: "The Eiffel Tower _______ in 1889."
+was built ✅
+builds
+is built
+built
+
+Complete the sentence: "English _______ in many countries all over the world."
+speaks
+is spoken ✅
+was spoken
+has spoken
+
+What is the place where you wait for a train called?
+The platform ✅
+The gate
+The port
+The runway
+
+Complete the sentence: "He lost his job, so he is currently _______."
+employer
+retired
+unemployed ✅
+promotion
+
+Complete the sentence: "I _______ that movie last night. It was great."
+have seen
+saw ✅
+was seeing
+see
+
+Complete the sentence: "If she _______ early, we will catch the bus."
+will arrive
+arrives ✅
+arrive
+arrived
+
+Complete the sentence: "We decided _______ to Italy for our summer holiday."
+going
+to go ✅
+go
+to going
+
+Complete the sentence: "I really enjoy _______ books in my free time."
+reading ✅
+to read
+read
+to reading
+
+Complete the sentence: "My car _______ stolen last night!"
+was ✅
+is
+has
+had
+
+Complete the sentence: "We need to protect the _______ by recycling plastic."
+pollution
+weather
+environment ✅
+earthquake
+
+Complete the sentence: "What will you do if you _______ the job?"
+don't get ✅
+won't get
+didn't get
+not get
+
+Complete the sentence: "You _______ be right, but I want to check the facts first."
+must
+may ✅
+shall
+will
+
+Level 6 – B1 (Intermediate)
+(Note: Exams and questions start getting trickier here, testing exceptions and precise structures.)
+
+Lesson 1 – Past Continuous and Past Simple
+
+Complete the sentence: "I _______ a book when the phone rang."
+read
+was reading ✅
+am reading
+have read
+
+Complete the sentence: "While we were walking in the park, it _______ to rain."
+was starting
+starts
+started ✅
+has started
+
+Complete the sentence: "What _______ at 8 PM last night?"
+were you doing ✅
+did you do
+are you doing
+have you done
+
+Complete the sentence: "He fell asleep while he _______ TV."
+watches
+is watching
+was watching ✅
+watched
+
+Complete the sentence: "They _______ for the bus when the accident happened."
+waiting
+were waiting ✅
+waited
+are waiting
+
+Lesson 2 – Present Perfect Continuous
+
+Complete the sentence: "I _______ for my keys for 30 minutes, but I still can't find them."
+have looked
+am looking
+have been looking ✅
+look
+
+Complete the sentence: "You look tired. _______ you been working hard?"
+Do
+Are
+Have ✅
+Were
+
+Complete the sentence: "She has been studying Spanish _______ three years."
+for ✅
+since
+during
+until
+
+Complete the sentence: "The ground is wet. It _______ raining."
+has been ✅
+is
+was
+have been
+
+Complete the sentence: "How long _______ waiting for the train?"
+are you
+have you been ✅
+do you
+were you
+
+Lesson 3 – Second Conditional
+
+Complete the sentence: "If I _______ a million dollars, I would travel the world."
+have
+had ✅
+would have
+will have
+
+Complete the sentence: "If she knew the answer, she _______ tell us."
+will
+would ✅
+can
+shall
+
+Complete the sentence: "I would buy that house if it _______ so expensive."
+isn't
+wasn't ✅
+wouldn't be
+hasn't been
+
+Complete the sentence: "If I _______ you, I would apologize to him."
+am
+was
+were ✅
+be
+
+Complete the sentence: "What would you do if you _______ a wallet on the street?"
+find
+found ✅
+would find
+finding
+
+Lesson 4 – Relative Clauses
+
+Complete the sentence: "The man _______ lives next door is a famous musician."
+which
+who ✅
+where
+whose
+
+Complete the sentence: "This is the restaurant _______ we ate last night."
+which
+who
+where ✅
+that
+
+Complete the sentence: "The book _______ I bought yesterday is very interesting."
+who
+where
+which ✅
+whose
+
+Complete the sentence: "Do you know the girl _______ brother won the race?"
+who
+which
+whose ✅
+that
+
+Complete the sentence: "I remember the day _______ we first met."
+where
+which
+when ✅
+who
+
+Lesson 5 – Used to and Would (Past Habits)
+
+Complete the sentence: "When I was a child, I _______ play in the park every day."
+used to ✅
+am used to
+use to
+was used to
+
+Complete the sentence: "He _______ smoke, but he quit five years ago."
+used to ✅
+uses to
+would to
+is used to
+
+Complete the sentence: "Did you _______ live in London?"
+used to
+use to ✅
+uses to
+would
+
+Complete the sentence: "We _______ often go to the beach during the summer holidays." (Focus on repeated past action)
+used
+would ✅
+are used to
+use to
+
+Complete the sentence: "I _______ like broccoli when I was younger, but now I love it."
+didn't use to ✅
+didn't used to
+wasn't use to
+wouldn't
+
+Lesson 6 – Reported Speech (Statements)
+
+"I am tired," he said. → He said that he _______ tired.
+is
+was ✅
+has been
+would be
+
+"I will call you," she said. → She said she _______ call me.
+will
+would ✅
+can
+must
+
+"We have finished the project," they said. → They said they _______ the project.
+finished
+have finished
+had finished ✅
+are finishing
+
+"I can swim," he said. → He said he _______ swim.
+can
+could ✅
+would
+should
+
+"I don't like pizza," she said. → She said she _______ like pizza.
+doesn't
+didn't ✅
+wasn't
+hasn't
+
+Lesson 7 – Vocabulary: Emotions and Relationships
+
+Complete the sentence: "I was absolutely _______ when I heard the terrible news."
+thrilled
+devastated ✅
+delighted
+amused
+
+Complete the sentence: "He always supports me. He is a very _______ friend."
+loyal ✅
+jealous
+stubborn
+selfish
+
+Complete the sentence: "After 10 years of marriage, they decided to get a _______."
+wedding
+divorce ✅
+engagement
+honeymoon
+
+Complete the sentence: "I get very _______ when I have to speak in public."
+confident
+anxious ✅
+relaxed
+cheerful
+
+Complete the sentence: "They are getting _______ next month. I bought a new dress for the wedding."
+engaged
+married ✅
+divorced
+separated
+
+Lesson 8 – Passive Voice (Continuous and Perfect)
+
+Complete the sentence: "The house _______ right now by the builders."
+is painting
+is being painted ✅
+has painted
+was painting
+
+Complete the sentence: "My car is at the garage. It _______."
+is repaired
+is being repaired ✅
+repairs
+has repaired
+
+Complete the sentence: "The project _______ yet."
+hasn't been finished ✅
+hasn't finished
+wasn't finishing
+isn't finish
+
+Complete the sentence: "All the tickets _______ before we arrived."
+have been sold
+were selling
+had been sold ✅
+are sold
+
+Complete the sentence: "The new bridge _______ by the end of next year."
+will build
+will be built ✅
+is building
+builds
+
+Level 6 – Final Exam (Hard)
+Complete the sentence: "If I _______ his phone number, I would call him right now. But I don't."
+have
+had ✅
+had had
+would have
+
+Complete the sentence: "She _______ working on this essay since 9 AM and she still hasn't finished."
+has been ✅
+is
+was
+had been
+
+Complete the sentence: "I didn't hear the doorbell because I _______ a shower."
+took
+have taken
+was taking ✅
+had taken
+
+"I have never been to Tokyo," he said. → He said that he _______ to Tokyo.
+has never been
+had never been ✅
+never was
+never went
+
+Complete the sentence: "That’s the teacher _______ classes are always so interesting."
+who
+which
+whose ✅
+that
+
+Complete the sentence: "When I was younger, I _______ believe in ghosts, but I don't anymore."
+used to ✅
+am used to
+use to
+would
+
+Complete the sentence: "If I _______ you, I wouldn't accept that job offer."
+was
+am
+were ✅
+have been
+
+Complete the sentence: "We can't go into the kitchen right now because the floor _______."
+is cleaning
+is being cleaned ✅
+cleans
+has been cleaned
+
+Complete the sentence: "She was completely _______ by the surprise party. She didn't expect it at all."
+astonished ✅
+anxious
+jealous
+stubborn
+
+Complete the sentence: "I don't know the name of the man _______ helped me."
+who ✅
+which
+whose
+where
+
+Complete the sentence: "By the time we got to the cinema, the movie _______."
+started
+was starting
+had already started ✅
+has started
+
+Complete the sentence: "They _______ each other for five years before they got married."
+know
+have known
+had known ✅
+knew
+
+"I will help you tomorrow," she promised. → She promised that she _______ help me the next day.
+will
+would ✅
+can
+could
+
+Complete the sentence: "Look at you! You're covered in paint. _______ the living room?"
+Did you paint
+Have you painted
+Have you been painting ✅
+Were you painting
+
+Complete the sentence: "My sister and her husband are always fighting. I think they might get _______."
+engaged
+married
+divorced ✅
+widowed
+
+Complete the sentence: "Did you _______ have long hair when you were a teenager?"
+used to
+use to ✅
+would
+use
+
+Complete the sentence: "The problem _______ discussed by the committee at the moment."
+is
+is being ✅
+has been
+was
+
+Complete the sentence: "I would travel more if I _______ more free time."
+have
+had ✅
+would have
+had had
+
+Complete the sentence: "The hotel _______ we stayed had a fantastic swimming pool."
+which
+where ✅
+that
+whose
+
+Complete the sentence: "He said he _______ his keys the day before."
+lost
+has lost
+had lost ✅
+was losing
+
+Level 7 – B1/B2 (Upper-Intermediate Transition)
+(Note: This level introduces advanced tenses, nuanced modals, and abstract vocabulary.)
+
+Lesson 1 – Past Perfect Simple and Continuous
+
+Complete the sentence: "By the time I arrived at the station, the train _______."
+left
+has left
+had left ✅
+was leaving
+
+Complete the sentence: "I was exhausted because I _______ all day."
+had been working ✅
+have been working
+was working
+worked
+
+Complete the sentence: "She _______ for the company for ten years before she became the CEO."
+has worked
+had been working ✅
+was working
+works
+
+Complete the sentence: "When I checked my phone, I saw that John _______ me five times."
+called
+has called
+had called ✅
+was calling
+
+Complete the sentence: "They were angry because they _______ in the rain for over an hour."
+have waited
+are waiting
+had been waiting ✅
+wait
+
+Lesson 2 – Third Conditional
+
+Complete the sentence: "If I had known you were in hospital, I _______ you."
+would visit
+will visit
+would have visited ✅
+had visited
+
+Complete the sentence: "She wouldn't have missed her flight if she _______ up earlier."
+woke
+has woken
+had woken ✅
+would wake
+
+Complete the sentence: "If we _______ the map, we wouldn't have gotten lost."
+checked
+had checked ✅
+would check
+have checked
+
+Complete the sentence: "I _______ the exam if I hadn't studied so hard."
+would fail
+had failed
+would have failed ✅
+failed
+
+Complete the sentence: "If he had driven more carefully, he _______ the accident."
+wouldn't have had ✅
+didn't have
+wouldn't have
+hadn't had
+
+Lesson 3 – Modals of Past Deduction
+
+Complete the sentence: "You _______ seen a ghost. They don't exist!"
+must have
+can't have ✅
+should have
+might have
+
+Complete the sentence: "The ground is completely wet. It _______ rained heavily last night."
+must have ✅
+should have
+can't have
+would have
+
+Complete the sentence: "I can't find my phone. I _______ left it at the cafe."
+must have
+might have ✅
+can't have
+should have
+
+Complete the sentence: "You _______ told me you were coming! I would have cooked dinner." (Expressing regret/criticism)
+must have
+can't have
+should have ✅
+might have
+
+Complete the sentence: "He got a perfect score on the test. He _______ studied very hard."
+must have ✅
+can't have
+should have
+could have
+
+Lesson 4 – Question Tags and Indirect Questions
+
+Complete the sentence: "You are coming to the party, _______?"
+are you
+aren't you ✅
+do you
+don't you
+
+Complete the sentence: "She didn't call me, _______?"
+did she ✅
+didn't she
+does she
+doesn't she
+
+Complete the sentence: "Could you tell me where _______?"
+is the bank
+the bank is ✅
+does the bank be
+is bank
+
+Complete the sentence: "Do you know what time _______?"
+the train leaves ✅
+does the train leave
+leaves the train
+the train does leave
+
+Complete the sentence: "Let's go to the cinema, _______?"
+will we
+shall we ✅
+don't we
+do we
+
+Lesson 5 – Gerunds vs. Infinitives (Advanced Change in Meaning)
+
+Complete the sentence: "I clearly remember _______ the door when I left."
+to lock
+locking ✅
+lock
+locked
+
+Complete the sentence: "Please remember _______ the door when you leave."
+to lock ✅
+locking
+lock
+locked
+
+Complete the sentence: "While driving to London, we stopped _______ some coffee."
+getting
+to get ✅
+get
+got
+
+Complete the sentence: "My doctor told me to stop _______ because it is bad for my health."
+to smoke
+smoking ✅
+smoke
+smoked
+
+Complete the sentence: "I regret _______ you that your application has been denied."
+to inform ✅
+informing
+inform
+informed
+
+Lesson 6 – Vocabulary: Business and Economics
+
+What do you call the money a bank lends you to buy a house?
+A salary
+A mortgage ✅
+A profit
+A budget
+
+Complete the sentence: "The company went _______ because it owed too much money."
+bankrupt ✅
+wealthy
+profitable
+economic
+
+Complete the sentence: "Our _______ for the marketing campaign this year is $50,000."
+profit
+budget ✅
+salary
+tax
+
+Complete the sentence: "When you buy shares in a company, you are making an _______."
+inflation
+investment ✅
+interest
+insurance
+
+Complete the sentence: "The company's CEO decided to _______ from her position."
+employ
+resign ✅
+hire
+promote
+
+Lesson 7 – Vocabulary: Media and Technology
+
+What do you call a fake story created to deceive people on the internet?
+A headline
+A documentary
+A hoax ✅
+A broadcast
+
+Complete the sentence: "The software is out of date. You need to _______ it."
+upload
+delete
+update ✅
+browse
+
+Complete the sentence: "Hackers managed to _______ the company's secure server."
+breach ✅
+invent
+scroll
+stream
+
+What is the title of a newspaper article printed in large letters?
+The broadcast
+The headline ✅
+The column
+The editorial
+
+Complete the sentence: "Many people now _______ movies online instead of buying DVDs."
+scroll
+stream ✅
+browse
+type
+
+Lesson 8 – Wish and If Only
+
+Complete the sentence: "I wish I _______ speak French. It would be so useful for my job."
+can
+could ✅
+am able to
+will
+
+Complete the sentence: "It's freezing outside! If only I _______ a heavier coat."
+wore
+have worn
+had worn ✅
+wear
+
+Complete the sentence: "I wish you _______ smoking. It's terrible for you."
+would stop ✅
+will stop
+stop
+are stopping
+
+Complete the sentence: "I wish I _______ so much cake at the party. Now I feel sick."
+didn't eat
+haven't eaten
+hadn't eaten ✅
+wouldn't eat
+
+Complete the sentence: "If only I _______ more time to finish the project!"
+have
+had ✅
+had had
+would have
+
+Level 7 – Final Exam (Hard)
+Complete the sentence: "If I _______ that it was a secret, I wouldn't have told anyone."
+knew
+had known ✅
+know
+would know
+
+Complete the sentence: "I can't find my umbrella. I _______ left it on the bus."
+must have ✅
+should have
+can't have
+would have
+
+Complete the sentence: "Could you tell me when _______?"
+does the meeting start
+the meeting starts ✅
+starts the meeting
+the meeting does start
+
+Complete the sentence: "I regret _______ that car. It has broken down three times already."
+to buy
+buying ✅
+buy
+bought
+
+Complete the sentence: "By the time the police arrived, the thieves _______."
+escaped
+have escaped
+had escaped ✅
+were escaping
+
+Complete the sentence: "He never listens to my advice, _______?"
+does he ✅
+doesn't he
+is he
+isn't he
+
+Complete the sentence: "The company made a huge _______ last year and paid bonuses to everyone."
+budget
+mortgage
+profit ✅
+debt
+
+Complete the sentence: "I wish I _______ to the concert with you yesterday, but I was sick."
+went
+had gone ✅
+would go
+go
+
+Complete the sentence: "You _______ be hungry again! You just ate a huge pizza."
+must
+might
+can't ✅
+should
+
+Complete the sentence: "We were exhausted because we _______ for six hours without a break."
+were driving
+have been driving
+had been driving ✅
+drove
+
+Complete the sentence: "If she had set her alarm, she _______ late for the interview."
+wouldn't be
+wouldn't have been ✅
+isn't
+hadn't been
+
+Complete the sentence: "I’ll never forget _______ the Eiffel Tower for the first time."
+to see
+seeing ✅
+see
+saw
+
+Complete the sentence: "They have a lot of money. They _______ be very wealthy."
+must ✅
+can't
+should
+might
+
+Complete the sentence: "Do you know what time _______?"
+closes the supermarket
+does the supermarket close
+the supermarket closes ✅
+is the supermarket closing
+
+Complete the sentence: "He decided to _______ from his job because of the high stress levels."
+resign ✅
+hire
+employ
+invest
+
+Complete the sentence: "I wish you _______ leaving your dirty clothes on the floor! It’s so annoying."
+would stop ✅
+had stopped
+will stop
+stop
+
+Complete the sentence: "I completely forgot _______ the oven off. The dinner is ruined!"
+turning
+to turn ✅
+turn
+turned
+
+Complete the sentence: "She _______ won the lottery. That's impossible, she didn't even buy a ticket!"
+must have
+can't have ✅
+might have
+should have
+
+What do you call a fake story created to deceive people on the internet?
+A headline
+A hoax ✅
+A broadcast
+A column
+
+Complete the sentence: "Let's take a break, _______?"
+will we
+shall we ✅
+don't we
+do we
+
+
+Level 8 – B2 (Upper-Intermediate)
+Lesson 1 – Mixed Conditionals
+
+Complete the sentence: "If I had taken that job in Paris, I _______ fluent in French by now."
+will be
+would be ✅
+would have been
+am
+
+Complete the sentence: "If she _______ so much time on her phone, she would have passed the exam yesterday."
+didn't spend ✅
+hasn't spent
+hadn't spent
+doesn't spend
+
+Complete the sentence: "I would be working in London now if I _______ the interview."
+haven't failed
+didn't fail
+hadn't failed ✅
+wouldn't fail
+
+Complete the sentence: "If they were paying attention, they _______ the mistake before they sent the email."
+would spot
+will spot
+spotted
+would have spotted ✅
+
+Complete the sentence: "If I _______ you, I wouldn't have spoken to the manager like that."
+was
+am
+were ✅
+have been
+
+Lesson 2 – Advanced Passive Voice
+
+Complete the sentence: "He is believed _______ the country under a false name."
+to leave
+to have left ✅
+leaving
+that he left
+
+Complete the sentence: "I need to _______ by Friday for the wedding."
+have cut my hair
+cut my hair
+have my hair cut ✅
+had my hair cut
+
+Complete the sentence: "It _______ that the CEO is going to resign next month."
+has rumoured
+is rumoured ✅
+rumours
+was rumouring
+
+Complete the sentence: "I don't like _______ what to do."
+telling
+to tell
+being told ✅
+having told
+
+Complete the sentence: "The suspect is thought _______ in the local area."
+to be hiding ✅
+hiding
+that he hides
+is hiding
+
+Lesson 3 – Future Perfect and Future Continuous
+
+Complete the sentence: "This time next week, I _______ on a beach in Hawaii."
+will relax
+will be relaxing ✅
+will have relaxed
+relax
+
+Complete the sentence: "By the time you arrive, we _______ cooking dinner."
+will finish
+are finishing
+will have finished ✅
+will be finishing
+
+Complete the sentence: "Please don't call me at 8 PM. I _______ dinner with my family."
+will have
+have
+will be having ✅
+will have had
+
+Complete the sentence: "By the end of this year, she _______ at the company for a decade."
+will work
+is working
+will be working
+will have been working ✅
+
+Complete the sentence: "Do you think you _______ the report by 5 PM?"
+will have completed ✅
+will be completing
+are completing
+will complete
+
+Lesson 4 – Relative Clauses (Advanced)
+
+Complete the sentence: "The man _______ car was stolen reported it to the police."
+who
+that
+whose ✅
+whom
+
+Complete the sentence: "My brother, _______ lives in New York, is coming to visit."
+that
+which
+who ✅
+whose
+
+Complete the sentence: "This is the company for _______ I have worked for the last five years."
+that
+which ✅
+whom
+where
+
+Complete the sentence: "She offered me a coffee, _______ was exactly what I needed."
+that
+which ✅
+what
+it
+
+Complete the sentence: "There were ten students in the class, none of _______ passed the test."
+which
+them
+who
+whom ✅
+
+Lesson 5 – Phrasal Verbs (B2 Level)
+
+Complete the sentence: "I can't _______ this loud music anymore! I'm going to complain."
+put up with ✅
+get away with
+look forward to
+catch up on
+
+Complete the sentence: "It took him a long time to _______ the flu."
+get off
+get over ✅
+get down
+get through
+
+Complete the sentence: "The meeting has been _______ until next Wednesday."
+put off ✅
+called off
+taken off
+turned off
+
+Complete the sentence: "I bumped into an old friend and we decided to _______ over a coffee."
+bring up
+catch up ✅
+take over
+look up
+
+Complete the sentence: "She finally _______ the courage to ask for a promotion."
+worked out
+came up
+plucked up ✅
+carried out
+
+Lesson 6 – Advanced Reporting Verbs
+
+Complete the sentence: "The suspect _______ stealing the money."
+refused
+denied ✅
+rejected
+warned
+
+Complete the sentence: "She _______ on paying for the meal."
+insisted ✅
+suggested
+offered
+demanded
+
+Complete the sentence: "He _______ me to leave the building immediately."
+suggested
+said
+warned ✅
+threatened
+
+Complete the sentence: "They _______ breaking the antique vase."
+admitted ✅
+accused
+blamed
+refused
+
+Complete the sentence: "My boss _______ that we start the meeting early."
+told
+suggested ✅
+asked
+advised
+
+Lesson 7 – Vocabulary: Science and Technology
+
+What is the process by which plants make their food using sunlight?
+Evolution
+Photosynthesis ✅
+Respiration
+Genetics
+
+Complete the sentence: "The scientists made a major _______ in cancer research."
+breakout
+breakdown
+breakthrough ✅
+breakaway
+
+Complete the sentence: "Many appliances are now equipped with _______ intelligence."
+fake
+false
+artificial ✅
+synthetic
+
+Complete the sentence: "The telescope allows us to observe _______ galaxies."
+distant ✅
+obsolete
+innovative
+virtual
+
+Complete the sentence: "Before a drug is approved, it must undergo rigorous clinical _______."
+attempts
+trials ✅
+errors
+experiments
+
+Lesson 8 – Modals of Deduction (Past & Present)
+
+Complete the sentence: "She's not answering her phone. She _______ asleep."
+must be ✅
+can be
+should be
+ought to be
+
+Complete the sentence: "You _______ seen John yesterday; he is currently in Australia!"
+must have
+can't have ✅
+should have
+might have
+
+Complete the sentence: "I don't know why she didn't say hello. She _______ not have seen you."
+must
+can
+should
+might ✅
+
+Complete the sentence: "He failed the exam. He _______ studied harder."
+must have
+can't have
+should have ✅
+might have
+
+Complete the sentence: "There's a lot of traffic. The accident _______ caused a delay."
+must have ✅
+can't have
+should have
+ought to have
+
+Level 8 – Final Exam
+Complete the sentence: "If I _______ so much garlic last night, I wouldn't feel so thirsty now."
+didn't eat
+haven't eaten
+hadn't eaten ✅
+wouldn't eat
+
+Complete the sentence: "The Mona Lisa is known _______ by Leonardo da Vinci."
+to paint
+to be painting
+to have been painted ✅
+that it was painted
+
+Complete the sentence: "By the time we arrive at the cinema, the film _______."
+will start
+will have started ✅
+will be starting
+starts
+
+Complete the sentence: "My sister, _______ is a doctor, works in London."
+that
+who ✅
+which
+whose
+
+Complete the sentence: "I refuse to _______ his terrible behavior any longer!"
+put up with ✅
+get away with
+look down on
+catch up on
+
+Complete the sentence: "He _______ having anything to do with the robbery."
+refused
+rejected
+denied ✅
+declined
+
+Complete the sentence: "Researchers have discovered a new _______ of the virus."
+strain ✅
+string
+strand
+stroke
+
+Complete the sentence: "She got top marks in the test. She _______ studied very hard."
+must have ✅
+can't have
+should have
+might have
+
+Listen to the phrase: "I'll be working late tomorrow." What tense is this?
+Future Simple
+Future Perfect
+Future Continuous ✅
+Present Continuous
+
+Complete the sentence: "I would be happier if I _______ a different career path years ago."
+chose
+had chosen ✅
+have chosen
+would choose
+
+Complete the sentence: "We need to _______ the roof repaired before winter."
+make
+have ✅
+do
+take
+
+Complete the sentence: "At 10 AM tomorrow, I _______ an exam, so don't call me."
+will take
+will be taking ✅
+will have taken
+am taking
+
+Complete the sentence: "The building, _______ was constructed in 1920, is now a museum."
+that
+which ✅
+where
+whose
+
+Complete the sentence: "We had to _______ the match due to the heavy rain."
+call off ✅
+put off
+take off
+turn off
+
+Complete the sentence: "She _______ that we take a taxi instead of walking."
+advised
+told
+suggested ✅
+offered
+
+Complete the sentence: "The new smartphone features a completely _______ design."
+innovative ✅
+obsolete
+artificial
+ancient
+
+Complete the sentence: "You _______ told me you were coming! I would have made lunch."
+must have
+might have
+can't have
+should have ✅
+
+Complete the sentence: "The company is reported _______ heavy losses last quarter."
+to make
+to have made ✅
+making
+that it made
+
+Complete the sentence: "If they _______ the map, they wouldn't be lost right now."
+checked
+have checked
+had checked ✅
+would check
+
+Complete the sentence: "The politicians finally managed to _______ a deal."
+strike ✅
+hit
+make
+take
+
+Level 9 – B2/C1 (Advanced Transition)
+Lesson 1 – Inversion (Negative Adverbials)
+
+Complete the sentence: "Hardly _______ down when the phone rang."
+had I sat ✅
+I had sat
+did I sit
+I sat
+
+Complete the sentence: "Under no circumstances _______ open this door."
+you should
+should you ✅
+you must
+must you to
+
+Complete the sentence: "Not only _______ the exam, but she also got the highest score."
+she passed
+passed she
+did she pass ✅
+she did pass
+
+Complete the sentence: "Scarcely _______ the house when it started to pour with rain."
+we had left
+had we left ✅
+did we leave
+we left
+
+Complete the sentence: "Rarely _______ such a magnificent performance."
+have I seen ✅
+I have seen
+I saw
+did I saw
+
+Lesson 2 – Participle Clauses
+
+Complete the sentence: "_______ by the long journey, he fell asleep on the sofa."
+Exhausting
+Exhausted ✅
+Having exhausted
+To exhaust
+
+Complete the sentence: "_______ the book, I can highly recommend it."
+Read
+Reading
+Having read ✅
+To read
+
+Complete the sentence: "_______ at the right angle, the building looks like a spaceship."
+Viewing
+Viewed ✅
+Having viewed
+To view
+
+Complete the sentence: "Not _______ what to do, she called her manager for advice."
+knowing ✅
+known
+having known
+knew
+
+Complete the sentence: "_______ the room, he realized he had forgotten his keys."
+Entering ✅
+Entered
+Having entered
+To enter
+
+Lesson 3 – Advanced Modal Structures
+
+Complete the sentence: "I would rather you _______ smoke in the house."
+don't
+didn't ✅
+not
+wouldn't
+
+Complete the sentence: "It's high time we _______ the airport."
+leave
+are leaving
+left ✅
+had left
+
+Complete the sentence: "You had better _______ late for the interview."
+not be ✅
+not to be
+don't be
+aren't
+
+Complete the sentence: "I would sooner you _______ tell him the truth just yet."
+didn't ✅
+don't
+not
+wouldn't
+
+Complete the sentence: "It's about time you _______ taking your studies seriously."
+start
+started ✅
+are starting
+have started
+
+Lesson 4 – Cleft Sentences (Emphasis)
+
+Complete the sentence: "What I don't understand _______ why he left so suddenly."
+it is
+is ✅
+that is
+being
+
+Complete the sentence: "It was John _______ broke the window."
+who ✅
+what
+which
+whom
+
+Complete the sentence: "All I want _______ a little peace and quiet."
+is ✅
+are
+to be
+it is
+
+Complete the sentence: "_______ the manager that I need to speak to."
+There is
+It is ✅
+What is
+He is
+
+Complete the sentence: "The reason _______ I am calling is to confirm my appointment."
+why ✅
+because
+what
+which
+
+Lesson 5 – Perfect Infinitives and Gerunds
+
+Complete the sentence: "She claims _______ the president, but nobody believes her."
+to meet
+to have met ✅
+meeting
+having met
+
+Complete the sentence: "He regrets _______ harder when he was at university."
+not to study
+not studying ✅
+not to have studied
+to not study
+
+Complete the sentence: "I appreciate _______ me the opportunity to present my ideas."
+you to give
+your giving ✅
+you give
+that you give
+
+Complete the sentence: "He was punished for _______ the company's rules."
+having broken ✅
+to break
+break
+to have broken
+
+Complete the sentence: "They are proud _______ the tournament for the third time."
+to win
+to have won ✅
+winning
+having win
+
+Lesson 6 – Collocations (Strong & Fixed)
+
+Complete the sentence: "I completely forgot her birthday. My mind just went completely _______."
+empty
+blind
+blank ✅
+dark
+
+Complete the sentence: "The government has introduced strictly _______ rules on immigration."
+heavy
+tough ✅
+hard
+stiff
+
+Complete the sentence: "Despite the bad weather, the festival was a _______ success."
+roaring ✅
+shouting
+crying
+screaming
+
+Complete the sentence: "It is highly _______ that he will get the job without any experience."
+improbable ✅
+impossible
+unlikely
+doubtful
+
+Complete the sentence: "She took _______ exception to his rude comments."
+strong ✅
+heavy
+hard
+deep
+
+Lesson 7 – Discourse Markers and Linkers
+
+Complete the sentence: "The weather was terrible; _______, we still had a great time."
+moreover
+furthermore
+nevertheless ✅
+consequently
+
+Complete the sentence: "_______ the heavy rain, the football match went ahead as planned."
+Although
+Despite ✅
+In spite
+However
+
+Complete the sentence: "He is highly intelligent; _______, he lacks practical common sense."
+conversely ✅
+subsequently
+accordingly
+therefore
+
+Complete the sentence: "The project was delayed, _______ largely to supply chain issues."
+because
+since
+owing ✅
+resulting
+
+Complete the sentence: "_______ being a great musician, he is also a talented painter."
+Beside
+Besides ✅
+Except
+Apart
+
+Lesson 8 – Global Issues and Politics
+
+Complete the sentence: "The country is experiencing severe economic _______."
+stagnation ✅
+inflation
+currency
+monopoly
+
+Complete the sentence: "The government has pledged to _______ carbon emissions by 20%."
+mitigate
+alleviate
+curtail ✅
+diminish
+
+Complete the sentence: "Many developing nations suffer from a _______ of natural resources."
+scarcity ✅
+surplus
+abundance
+majority
+
+Complete the sentence: "The new laws are an attempt to crack down on tax _______."
+evasion ✅
+avoidance
+exemption
+deduction
+
+Complete the sentence: "The two sides agreed to a temporary _______ to negotiate peace."
+ceasefire ✅
+treaty
+alliance
+sanction
+
+Level 9 – Final Exam
+Complete the sentence: "Not once _______ at me during the entire meeting."
+she looked
+did she look ✅
+looked she
+she did look
+
+Complete the sentence: "_______ the instructions carefully, he still made a mistake."
+Read
+Reading
+Having read ✅
+To read
+
+Complete the sentence: "I'd rather you _______ me at home; I'm trying to relax."
+don't call
+didn't call ✅
+not call
+wouldn't call
+
+Complete the sentence: "It was the weather _______ ruined our holiday."
+what
+which
+that ✅
+how
+
+Complete the sentence: "She is thrilled _______ for the prestigious award."
+to nominate
+to be nominating
+to have been nominated ✅
+having nominated
+
+Complete the sentence: "The company went bankrupt due to _______ financial management."
+grossly
+poorly
+appalling ✅
+heavily
+
+Complete the sentence: "We enjoyed the holiday, _______ it was very expensive."
+despite
+albeit ✅
+however
+nevertheless
+
+Complete the sentence: "The United Nations imposed strict _______ on the country."
+tariffs
+sanctions ✅
+embargoes
+quotas
+
+Complete the sentence: "Only after I left the house _______ I had forgotten my keys."
+did I realize ✅
+I realized
+I did realize
+had I realized
+
+Complete the sentence: "_______ by the police, the thief dropped the bag and ran."
+Chasing
+Chased ✅
+Having chased
+To chase
+
+Complete the sentence: "It's high time you _______ to take responsibility for your actions."
+learn
+learning
+learned ✅
+have learned
+
+Complete the sentence: "What I hated most about the movie _______ the ending."
+were
+is
+was ✅
+being
+
+Complete the sentence: "He denied _______ anything about the missing documents."
+to know
+knowing ✅
+to have known
+knew
+
+Complete the sentence: "She has a _______ memory for names and faces."
+photographic ✅
+visual
+picture
+graphic
+
+Complete the sentence: "The plan was ambitious; _______, it was completely unworkable."
+furthermore
+consequently
+nevertheless ✅
+therefore
+
+Complete the sentence: "The activist spoke passionately about the need to _______ poverty."
+eradicate ✅
+demolish
+destroy
+exterminate
+
+Complete the sentence: "Never before _______ such a ridiculous excuse!"
+I have heard
+did I hear
+have I heard ✅
+I heard
+
+Complete the sentence: "_______ the situation, she decided to stay quiet."
+Assessed
+Assessing ✅
+Having assess
+To assess
+
+Complete the sentence: "You had better _______ anyone about this secret."
+not tell ✅
+not to tell
+don't tell
+didn't tell
+
+Complete the sentence: "The Prime Minister's speech was met with _______ applause."
+thunderous ✅
+stormy
+windy
+raining
+
+Level 10 – C1 (Advanced)
+Lesson 1 – The Subjunctive (Mandative)
+
+Complete the sentence: "It is essential that he _______ the documents immediately."
+signs
+sign ✅
+signed
+will sign
+
+Complete the sentence: "The board demanded that the manager _______ from his position."
+resigns
+resign ✅
+resigned
+will resign
+
+Complete the sentence: "I suggest that she _______ a lawyer before making a statement."
+consults
+consult ✅
+consulted
+is consulting
+
+Complete the sentence: "It is vital that they _______ informed of the changes."
+are
+be ✅
+will be
+have been
+
+Complete the sentence: "The doctor recommended that he _______ his salt intake."
+reduces
+reduce ✅
+reduced
+will reduce
+
+Lesson 2 – Advanced Conditionals (Inverted & Nuanced)
+
+Complete the sentence: "_______ you need any further assistance, please do not hesitate to contact me."
+Should ✅
+Would
+Could
+Might
+
+Complete the sentence: "_______ I known the outcome, I would never have agreed to the plan."
+Have
+Had ✅
+Did
+Were
+
+Complete the sentence: "_______ it not for your financial support, the project would have failed."
+Was
+Had
+Were ✅
+Did
+
+Complete the sentence: "But _______ the quick actions of the pilot, the plane would have crashed."
+for ✅
+with
+to
+by
+
+Complete the sentence: "_______ that he is highly qualified, he still lacks practical experience."
+Providing
+Given ✅
+Assuming
+Suppose
+
+Lesson 3 – Ellipsis and Substitution
+
+Complete the sentence: "I didn't want to go to the party, but my friends convinced me _______."
+to go
+to ✅
+going
+for it
+
+Complete the sentence: "She doesn't play the piano as well as she used _______."
+to play
+to ✅
+playing
+play
+
+Complete the sentence: "I thought it would rain, and it _______."
+did ✅
+was
+had
+did rain
+
+Complete the sentence: "He said he would help me, but I doubt he _______."
+will ✅
+does
+has
+would
+
+Complete the sentence: "Some people prefer tea, while _______ prefer coffee."
+another
+others ✅
+the other
+other
+
+Lesson 4 – Advanced Dependent Prepositions
+
+Complete the sentence: "The noise from the street is not conducive _______ studying."
+for
+to ✅
+with
+at
+
+Complete the sentence: "The politician's speech was completely devoid _______ meaning."
+from
+of ✅
+in
+with
+
+Complete the sentence: "She is highly proficient _______ several programming languages."
+in ✅
+at
+with
+on
+
+Complete the sentence: "He is completely obsessed _______ winning the competition."
+by
+with ✅
+for
+on
+
+Complete the sentence: "The new regulations are completely disproportionate _______ the actual risk."
+with
+to ✅
+for
+from
+
+Lesson 5 – Nuanced Vocabulary (Synonym Differentiation)
+
+Complete the sentence: "The detective conducted a _______ search of the crime scene."
+meticulous ✅
+fastidious
+punctilious
+scrupulous
+
+Complete the sentence: "Smartphones have become _______ in modern society."
+ubiquitous ✅
+omnipresent
+pervasive
+universal
+
+Complete the sentence: "The smell of fresh bread evoked a feeling of profound _______."
+nostalgia ✅
+reminiscence
+memory
+recollection
+
+Complete the sentence: "His arguments were so _______ that everyone agreed with him."
+compelling ✅
+coercive
+forceful
+pushy
+
+Complete the sentence: "The weather in this region is notoriously _______, changing from sun to rain in minutes."
+fickle
+capricious ✅
+volatile
+erratic
+
+Lesson 6 – Advanced Phrasal Verbs
+
+Complete the sentence: "The deal fell _______ at the last minute due to a lack of funding."
+apart
+down
+through ✅
+out
+
+Complete the sentence: "We need to iron _______ a few problems before we launch the product."
+out ✅
+off
+up
+away
+
+Complete the sentence: "The teacher singled him _______ for his outstanding contribution."
+up
+out ✅
+off
+down
+
+Complete the sentence: "The government's plans have come _______ fierce criticism from the opposition."
+up against
+in for ✅
+down with
+out of
+
+Complete the sentence: "The noise of the train drowned _______ his words."
+out ✅
+off
+away
+down
+
+Lesson 7 – Idioms and Proverbs
+
+Complete the sentence: "By and _______, the new system has been a success."
+large ✅
+small
+all
+whole
+
+Complete the sentence: "The company is on the _______ of collapse."
+brink ✅
+edge
+verge
+point
+
+Complete the sentence: "He decided to throw caution to the _______ and quit his job."
+air
+wind ✅
+breeze
+storm
+
+Complete the sentence: "You've hit the nail on the _______ with that analysis."
+head ✅
+top
+point
+mark
+
+Complete the sentence: "It's a far _______ from the original proposal."
+cry ✅
+shout
+call
+distance
+
+Lesson 8 – Double Comparatives and Idiomatic Structures
+
+Complete the sentence: "The more you practice, the _______ you will become."
+better ✅
+best
+good
+more better
+
+Complete the sentence: "No sooner had I arrived _______ the meeting started."
+when
+then
+than ✅
+that
+
+Complete the sentence: "It's not so much a career _______ a calling."
+than
+as ✅
+like
+but
+
+Complete the sentence: "He works incredibly hard, as _______ his entire team."
+do
+does ✅
+is
+are
+
+Complete the sentence: "Try as he _______, he couldn't open the jar."
+might ✅
+could
+would
+should
+
+Level 10 – Final Exam (C1 Hard)
+Complete the sentence: "It is imperative that the equipment _______ tested before use."
+is
+be ✅
+will be
+are
+
+Complete the sentence: "_______ I known about the traffic, I would have taken a different route."
+Had ✅
+If
+Have
+Were
+
+Complete the sentence: "He told me to rewrite the essay, and I plan _______."
+to do
+to ✅
+doing
+do
+
+Complete the sentence: "Her behavior was completely incongruous _______ her usual calm demeanor."
+to
+with ✅
+for
+from
+
+Complete the sentence: "The author's writing style is known for being highly _______ and difficult to decipher."
+lucid
+opaque ✅
+transparent
+pellucid
+
+Complete the sentence: "Despite the initial setbacks, they managed to pull the project _______."
+off ✅
+through
+out
+over
+
+Complete the sentence: "The new tax policy was a bone of _______ between the two political parties."
+contention ✅
+argument
+dispute
+conflict
+
+Complete the sentence: "The harder you push him, the _______ he becomes."
+more stubborn ✅
+most stubborn
+stubborner
+stubborn
+
+Complete the sentence: "I request that she _______ present at the hearing."
+is
+be ✅
+will be
+was
+
+Complete the sentence: "_______ it not been for the seatbelt, he would have been seriously injured."
+Had ✅
+Were
+Was
+Did
+
+Complete the sentence: "She promised to return the book, but I knew she never _______."
+will
+would ✅
+did
+has
+
+Complete the sentence: "The committee is entirely devoid _______ any real power."
+from
+of ✅
+in
+with
+
+Complete the sentence: "The CEO was forced to step down after a highly _______ scandal."
+auspicious
+lucrative
+damaging ✅
+beneficial
+
+Complete the sentence: "The negotiations broke _______ after neither side would compromise."
+down ✅
+up
+off
+out
+
+Complete the sentence: "He really went out on a _______ to defend his colleague."
+branch
+limb ✅
+tree
+twig
+
+Complete the sentence: "No sooner had the match begun _______ it started to pour with rain."
+than ✅
+when
+then
+that
+
+Complete the sentence: "It is crucial that he _______ his medication every day."
+takes
+take ✅
+took
+will take
+
+Complete the sentence: "But _______ her quick thinking, the fire would have spread."
+for ✅
+by
+with
+to
+
+Complete the sentence: "The manager's demands were tantamount _______ extortion."
+with
+to ✅
+for
+from
+
+Complete the sentence: "The project has been plagued by a _______ of problems since day one."
+plethora ✅
+scarcity
+dearth
+paucity

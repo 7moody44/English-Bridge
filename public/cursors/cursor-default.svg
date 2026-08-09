@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <defs>
+    <linearGradient id="arrowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c084fc"/>
+      <stop offset="55%" stop-color="#7c3aed"/>
+      <stop offset="100%" stop-color="#312e81"/>
+    </linearGradient>
+  </defs>
+  <!-- Soft glow: layered translucent strokes instead of a blur filter (stable as a cursor) -->
+  <path d="M5.5 2.5 L5.5 24.5 L10.8 19.8 L14.2 27.2 L17.6 25.7 L14.2 18.5 L21.2 18 Z"
+        fill="none" stroke="#a855f7" stroke-width="5" stroke-linejoin="round" opacity="0.18"/>
+  <path d="M5.5 2.5 L5.5 24.5 L10.8 19.8 L14.2 27.2 L17.6 25.7 L14.2 18.5 L21.2 18 Z"
+        fill="none" stroke="#c084fc" stroke-width="3.2" stroke-linejoin="round" opacity="0.35"/>
+  <!-- Main arrow: purple-space gradient with white rim for contrast -->
+  <path d="M5.5 2.5 L5.5 24.5 L10.8 19.8 L14.2 27.2 L17.6 25.7 L14.2 18.5 L21.2 18 Z"
+        fill="url(#arrowGrad)" stroke="#ffffff" stroke-width="1.6" stroke-linejoin="round"/>
+  <!-- Star sparkle -->
+  <path d="M24.5 5 L25.4 7.6 L28 8.5 L25.4 9.4 L24.5 12 L23.6 9.4 L21 8.5 L23.6 7.6 Z" fill="#e9d5ff" opacity="0.95"/>
+  <!-- Tiny stardust -->
+  <circle cx="27.5" cy="16.5" r="1.1" fill="#c084fc" opacity="0.85"/>
+  <circle cx="22.5" cy="24" r="0.8" fill="#a78bfa" opacity="0.7"/>
+</svg>
