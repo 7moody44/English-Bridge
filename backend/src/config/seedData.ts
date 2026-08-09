@@ -2019,7 +2019,7 @@ export async function seedLessons(): Promise<string> {
 
     return `✅ All lessons already exist in database`;
   } catch (error) {
-    throw new Error(`Failed to seed lessons: ${error}`);
+    throw new Error(`Failed to seed lessons: ${error}`, { cause: error });
   }
 }
 

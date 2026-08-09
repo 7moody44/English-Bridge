@@ -92,9 +92,11 @@ const callGeminiTutor = async (message: string, history: ChatTurn[]): Promise<st
       const detail = await res.text().catch(() => '');
       throw new Error(`Gemini API error ${res.status}: ${detail.slice(0, 200)}`);
     }
-    const data: any = await res.json();
+    const data = (await res.json()) as {
+      candidates?: { content?: { parts?: { text?: string }[] } }[];
+    };
     const text: string | undefined = data?.candidates?.[0]?.content?.parts
-      ?.map((p: any) => p?.text ?? '')
+      ?.map((p) => p?.text ?? '')
       .join('');
     if (!text || !text.trim()) throw new Error('Gemini returned no content');
     return text.trim();
@@ -143,7 +145,7 @@ const callGroqTutor = async (message: string, history: ChatTurn[]): Promise<stri
       const detail = await res.text().catch(() => '');
       throw new Error(`Groq API error ${res.status}: ${detail.slice(0, 200)}`);
     }
-    const data: any = await res.json();
+    const data = (await res.json()) as { choices?: { message?: { content?: string } }[] };
     const text: string | undefined = data?.choices?.[0]?.message?.content;
     if (!text || !text.trim()) throw new Error('Groq returned no content');
     return text.trim();
@@ -308,8 +310,9 @@ tutorRoutes.post('/chat', authMiddleware, async (req: AuthRequest, res: Response
     }
 
     res.json({ success: true, reply, ai });
-  } catch (error: any) {
-    console.error('Tutor chat error:', error?.message || error);
+  } catch (error) {
+    const e = error as { message?: string };
+    console.error('Tutor chat error:', e?.message || error);
     res.status(500).json({ success: false, error: 'The tutor is unavailable right now. Please try again.' });
   }
 });

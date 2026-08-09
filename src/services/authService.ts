@@ -39,19 +39,15 @@ async function call<T>(path: string, options: RequestInit = {}): Promise<T> {
     headers,
   });
 
-  let data: any;
-  try {
-    data = await res.json();
-  } catch {
-    throw new Error('Unexpected server response');
-  }
+  const raw: unknown = await res.json();
+  const data = raw as Record<string, unknown> | null;
 
   if (!res.ok || data?.success === false) {
-    const err = new Error(data?.error || 'Request failed') as Error & ApiError;
+    const err = new Error((data?.error as string) || 'Request failed') as Error & ApiError;
     Object.assign(err, data || {});
     throw err;
   }
-  return data as T;
+  return data as unknown as T;
 }
 
 // ── Types ────────────────────────────────────────────────────────────────────

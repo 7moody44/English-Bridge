@@ -3,13 +3,11 @@ import AssessmentResult, {
   IAssessmentAnswer,
   IAssessmentResult,
 } from '../models/AssessmentResult.js';
-import UserProgress from '../models/UserProgress.js';
-import Mistake from '../models/Mistake.js';
+import UserProgress, { IUserProgress } from '../models/UserProgress.js';
 import {
   ASSESSMENT_QUESTIONS,
   AssessmentQuestion,
   CefrBand,
-  CEFR_DESCENDING,
   CEFR_TO_LEVEL,
 } from '../config/assessmentQuestions.js';
 import { recordMistakes, MistakeInput } from './mistakeService.js';
@@ -55,14 +53,13 @@ export const gradeAssessment = (answers: Record<number, number>): GradeResult =>
   const perBand = emptyPerBand();
   const detailed: IAssessmentAnswer[] = [];
   let totalCorrect = 0;
-  let answered = 0;
 
   for (const q of ASSESSMENT_QUESTIONS) {
     const bandTotal = perBand[q.cefr];
     bandTotal.total += 1;
 
     const raw = answers[q.id];
-    const correctIndex = q.correctAnswers[0];
+    const correctIndex = q.correctAnswers[0] ?? 0;
     const userTouched = typeof raw === 'number' && raw >= 0;
     const correct = userTouched && raw === correctIndex;
 
@@ -70,13 +67,12 @@ export const gradeAssessment = (answers: Record<number, number>): GradeResult =>
       totalCorrect += 1;
       bandTotal.correct += 1;
     }
-    if (userTouched) answered += 1;
 
     detailed.push({
       questionId: q.id,
       cefr: q.cefr,
-      userAnswer: userTouched ? q.options[raw] : '(no answer)',
-      correctAnswer: q.options[correctIndex],
+      userAnswer: userTouched ? (q.options[raw] ?? '(no answer)') : '(no answer)',
+      correctAnswer: q.options[correctIndex] ?? '(no answer)',
       correct,
     });
   }
@@ -149,7 +145,7 @@ export const gradeAssessment = (answers: Record<number, number>): GradeResult =>
 export const saveAssessmentResult = async (
   userId: Types.ObjectId | string,
   answers: Record<number, number>
-): Promise<{ result: IAssessmentResult; progress: any }> => {
+): Promise<{ result: IAssessmentResult; progress: IUserProgress | null }> => {
   const grade = gradeAssessment(answers);
 
   const result = await AssessmentResult.create({
@@ -182,7 +178,7 @@ export const saveAssessmentResult = async (
   const mistakes: MistakeInput[] = grade.answers
     .filter((a) => !a.correct)
     .map((a) => {
-      const q = QUESTION_BY_ID[a.questionId];
+      const q = QUESTION_BY_ID[a.questionId]!;
       return {
         source: 'assessment' as const,
         sourceLabel: 'Placement Assessment',
@@ -206,7 +202,7 @@ export const getHistory = async (
   userId: Types.ObjectId | string,
   limit = 10
 ): Promise<IAssessmentResult[]> => {
-  return AssessmentResult.find({ userId }).sort({ takenAt: -1 }).limit(limit).lean();
+  return AssessmentResult.find({ userId }).sort({ takenAt: -1 }).limit(limit).lean<IAssessmentResult[]>();
 };
 
 export { ASSESSMENT_QUESTIONS };

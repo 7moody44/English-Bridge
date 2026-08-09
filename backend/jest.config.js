@@ -9,8 +9,9 @@ export default {
     '**/?(*.)+(spec|test).ts',
   ],
   transform: {
-    '^.+\\.ts$': ['ts-jest', {
+    '^.+\\.tsx?$': ['ts-jest', {
       useESM: true,
+      tsconfig: 'tsconfig.test.json',
     }],
   },
   collectCoverageFrom: [
@@ -30,10 +31,4 @@ export default {
   },
   setupFilesAfterEnv: ['<rootDir>/src/tests/setup.ts'],
   testTimeout: 30000,
-  // Set test environment variables
-  globals: {
-    'ts-jest': {
-      useESM: true,
-    },
-  },
 };

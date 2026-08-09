@@ -85,8 +85,8 @@ describe('Property 1: Registration Validation Consistency', () => {
 
     it('should reject null, undefined, and empty strings as names', () => {
       expect(validateName('')).toBe(false);
-      expect(validateName(null as any)).toBe(false);
-      expect(validateName(undefined as any)).toBe(false);
+      expect(validateName(null as unknown as string)).toBe(false);
+      expect(validateName(undefined as unknown as string)).toBe(false);
     });
   });
 

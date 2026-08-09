@@ -37,7 +37,7 @@ class Server {
     this.app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
     // Handle JSON parsing errors
-    this.app.use((err: any, req: express.Request, res: express.Response, next: express.NextFunction) => {
+    this.app.use((err: unknown, req: express.Request, res: express.Response, next: express.NextFunction) => {
       if (err instanceof SyntaxError && 'body' in err) {
         res.status(400).json({
           success: false,
@@ -72,7 +72,7 @@ class Server {
           database: health,
           collections: collections.collections,
         });
-      } catch (error) {
+      } catch {
         res.status(500).json({
           success: false,
           error: 'Failed to check database status',

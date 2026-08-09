@@ -1,4 +1,4 @@
-import React, { createContext, useReducer, useCallback, ReactNode } from 'react';
+import React, { createContext, useReducer, useCallback, type ReactNode } from 'react';
 
 export type Theme = 'light' | 'dark';
 

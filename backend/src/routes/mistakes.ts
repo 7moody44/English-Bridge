@@ -77,7 +77,7 @@ router.post('/:id/resolve', authMiddleware, async (req: AuthRequest, res: Respon
       res.status(401).json({ success: false, error: 'Unauthorized' });
       return;
     }
-    const ok = await resolveMistake(userId, req.params.id);
+    const ok = await resolveMistake(userId, req.params.id ?? '');
     if (!ok) {
       res.status(404).json({ success: false, error: 'Mistake not found' });
       return;

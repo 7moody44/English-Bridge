@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ChevronLeft, Trophy, Heart, CheckCircle, XCircle } from 'lucide-react';
+import { ChevronLeft, Trophy, Heart, XCircle } from 'lucide-react';
 import { calculateXP } from '../../utils/xpCalculator';
 import { addXP } from '../../services/progressService';
 
@@ -93,7 +93,6 @@ export const HangmanGame: React.FC = () => {
 
   const handleFinish = async () => {
     const finalScore = (score / 180) * 100; // Max score: 3 words * 60 points each
-    const xpEarned = calculateXP(finalScore);
     
     try {
       // Save XP to backend

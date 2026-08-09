@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ChevronLeft, Search, Volume2, RotateCcw, CheckCircle, XCircle, ChevronRight, Plus } from 'lucide-react';
+import { ChevronLeft, Search, Volume2, RotateCcw, CheckCircle, XCircle, Plus } from 'lucide-react';
 import { vocabularyWords } from '@/data/vocabularyData';
 import type { VocabWord } from '@/data/vocabularyData';
 import { WordSelector } from '@/components/Vocab/WordSelector';
@@ -146,7 +146,6 @@ export const VocabPage: React.FC = () => {
   };
 
   const startQuiz = (words?: VocabWord[]) => {
-    const wordsToUse = words || filteredWords;
     setQuizStarted(true);
     setCurrentQuizIndex(0);
     setScore(0);
@@ -418,7 +417,7 @@ export const VocabPage: React.FC = () => {
                 </p>
                 <div className="flex gap-4 justify-center">
                   <button
-                    onClick={startFlashcards}
+                    onClick={() => startFlashcards()}
                     className="px-6 py-3 bg-purple-600 text-white rounded-xl font-semibold hover:bg-purple-700 transition-colors flex items-center gap-2"
                   >
                     <RotateCcw className="w-5 h-5" />

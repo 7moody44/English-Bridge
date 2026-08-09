@@ -88,7 +88,7 @@ export const getMistakes = async (
       .sort({ resolved: 1, createdAt: -1 })
       .skip((page - 1) * limit)
       .limit(limit)
-      .lean(),
+      .lean<IMistake[]>(),
   ]);
 
   return {
@@ -119,7 +119,7 @@ export const getMistakeStats = async (
     Mistake.countDocuments(base),
     Mistake.countDocuments({ ...base, resolved: false }),
     Mistake.countDocuments({ ...base, resolved: true }),
-    Mistake.aggregate<MistakeSource & { count: number }>([
+    Mistake.aggregate<{ _id: MistakeSource; count: number }>([
       { $match: base },
       { $group: { _id: '$source', count: { $sum: 1 } } },
     ]),
@@ -133,7 +133,7 @@ export const getMistakeStats = async (
     game: 0,
   };
   for (const row of agg) {
-    bySource[row._id as MistakeSource] = row.count;
+    bySource[row._id] = row.count;
   }
 
   return { total, unresolved, resolved, bySource };

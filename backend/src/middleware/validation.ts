@@ -1,7 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import Joi from 'joi';
 import { ApiResponse, ValidationError } from '../types/index.js';
-import { ApplicationError } from './errorHandler.js';
 
 // Validation middleware factory
 export const validate = (schema: Joi.ObjectSchema, property: 'body' | 'query' | 'params' = 'body') => {

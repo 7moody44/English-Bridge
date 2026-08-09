@@ -91,9 +91,10 @@ router.post(
         transcription: result.text,
         confidence: result.confidence,
       });
-    } catch (error: any) {
-      console.error('Error transcribing audio:', error?.message || error);
-      const message = error?.message || 'Transcription failed.';
+    } catch (error) {
+      const e = error as { message?: string };
+      console.error('Error transcribing audio:', e?.message || error);
+      const message = e?.message || 'Transcription failed.';
       res.status(500).json({ success: false, error: message });
     }
   }

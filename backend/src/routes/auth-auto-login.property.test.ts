@@ -11,7 +11,16 @@ import { MongoMemoryServer } from 'mongodb-memory-server';
 import User from '../models/User.js';
 import UserProgress from '../models/UserProgress.js';
 import { authRoutes } from './auth.js';
+import { config } from '../config/config.js';
 import jwt from 'jsonwebtoken';
+
+interface DecodedToken {
+  userId?: string;
+  username?: string;
+  email?: string;
+  exp?: number;
+  iat?: number;
+}
 
 let app: Express;
 let mongoServer: MongoMemoryServer;
@@ -52,9 +61,11 @@ const validFirstNameArb = fc.stringMatching(/^[a-zA-Z\-']{2,50}$/).map(s => s.tr
 const validLastNameArb = fc.stringMatching(/^[a-zA-Z\-']{2,50}$/).map(s => s.trim()).filter(s => s.length >= 2);
 const validUsernameArb = fc.stringMatching(/^[a-z0-9_-]{3,30}$/);
 const validEmailArb = fc.emailAddress();
+const PASSWORD_CHARS = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@$!%*?&';
 const validPasswordArb = fc
-  .string({ minLength: 8, maxLength: 50 })
-  .filter(s => /[A-Z]/.test(s) && /[a-z]/.test(s) && /[0-9]/.test(s) && s.trim().length >= 8);
+  .array(fc.constantFrom(...PASSWORD_CHARS), { minLength: 8, maxLength: 50 })
+  .map((chars) => chars.join(''))
+  .filter((s) => /[A-Z]/.test(s) && /[a-z]/.test(s) && /[0-9]/.test(s) && /[@$!%*?&]/.test(s));
 
 const validRegistrationDataArb = fc.record({
   firstName: validFirstNameArb,
@@ -73,7 +84,7 @@ describe('Property 3: User Creation and Auto-Login', () => {
           await User.deleteMany({});
           await UserProgress.deleteMany({});
 
-          const response = await request(app)
+          await request(app)
             .post('/api/auth/register/step2')
             .send({
               ...registrationData,
@@ -99,7 +110,7 @@ describe('Property 3: User Creation and Auto-Login', () => {
           await User.deleteMany({});
           await UserProgress.deleteMany({});
 
-          const response = await request(app)
+          await request(app)
             .post('/api/auth/register/step2')
             .send({
               ...registrationData,
@@ -171,7 +182,7 @@ describe('Property 3: User Creation and Auto-Login', () => {
           const token = response.body.token;
 
           // Decode the token
-          const decoded = jwt.verify(token, TEST_JWT_SECRET) as any;
+          const decoded = jwt.verify(token, config.jwtSecret) as DecodedToken;
 
           // Token should contain user information
           expect(decoded.userId).toBeDefined();
@@ -267,8 +278,8 @@ describe('Property 3: User Creation and Auto-Login', () => {
           expect(loginResponse.body.token).toBeDefined();
           
           // Both tokens should decode to the same user
-          const registrationDecoded = jwt.verify(registrationToken, TEST_JWT_SECRET) as any;
-          const loginDecoded = jwt.verify(loginResponse.body.token, TEST_JWT_SECRET) as any;
+          const registrationDecoded = jwt.verify(registrationToken, config.jwtSecret) as DecodedToken;
+          const loginDecoded = jwt.verify(loginResponse.body.token, config.jwtSecret) as DecodedToken;
           
           expect(registrationDecoded.userId).toBe(loginDecoded.userId);
           expect(registrationDecoded.username).toBe(loginDecoded.username);
@@ -385,7 +396,7 @@ describe('Property 3: User Creation and Auto-Login', () => {
 
           const afterTime = Math.floor(Date.now() / 1000);
 
-          const decoded = jwt.verify(response.body.token, TEST_JWT_SECRET) as any;
+          const decoded = jwt.verify(response.body.token, config.jwtSecret) as DecodedToken;
 
           // Token should have issued at time between before and after
           expect(decoded.iat).toBeGreaterThanOrEqual(beforeTime);
@@ -395,7 +406,7 @@ describe('Property 3: User Creation and Auto-Login', () => {
           expect(decoded.exp).toBeGreaterThan(afterTime);
 
           // Token should expire in 24 hours (24 * 60 * 60 = 86400 seconds)
-          const expirationDuration = decoded.exp - decoded.iat;
+          const expirationDuration = (decoded.exp ?? 0) - (decoded.iat ?? 0);
           expect(expirationDuration).toBe(86400);
         }),
         { numRuns: 10 }

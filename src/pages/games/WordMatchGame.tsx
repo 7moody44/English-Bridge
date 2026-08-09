@@ -88,7 +88,6 @@ export const WordMatchGame: React.FC = () => {
 
   const handleFinish = async () => {
     const finalScore = (score / (wordPairs.length * 10)) * 100;
-    const xpEarned = calculateXP(finalScore);
     
     try {
       // Save XP to backend

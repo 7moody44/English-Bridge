@@ -74,8 +74,9 @@ export class DatabaseManager {
         await User.collection.createIndex({ username: 1 }, { unique: true, sparse: true });
         await User.collection.createIndex({ email: 1 }, { unique: true, sparse: true });
         console.log('  ✅ User indexes created');
-      } catch (error: any) {
-        if (error.code === 86 || error.codeName === 'IndexKeySpecsConflict') {
+      } catch (error) {
+        const e = error as { code?: number | string; codeName?: string };
+        if (e.code === 86 || e.codeName === 'IndexKeySpecsConflict') {
           console.log('  ℹ️  User indexes already exist');
         } else {
           throw error;
@@ -86,8 +87,9 @@ export class DatabaseManager {
         await UserProgress.collection.createIndex({ userId: 1 }, { unique: true, sparse: true });
         await UserProgress.collection.createIndex({ userId: 1, currentLevel: 1 });
         console.log('  ✅ UserProgress indexes created');
-      } catch (error: any) {
-        if (error.code === 86 || error.codeName === 'IndexKeySpecsConflict') {
+      } catch (error) {
+        const e = error as { code?: number | string; codeName?: string };
+        if (e.code === 86 || e.codeName === 'IndexKeySpecsConflict') {
           console.log('  ℹ️  UserProgress indexes already exist');
         } else {
           throw error;
@@ -101,8 +103,9 @@ export class DatabaseManager {
         );
         await Lesson.collection.createIndex({ levelId: 1 });
         console.log('  ✅ Lesson indexes created');
-      } catch (error: any) {
-        if (error.code === 86 || error.codeName === 'IndexKeySpecsConflict') {
+      } catch (error) {
+        const e = error as { code?: number | string; codeName?: string };
+        if (e.code === 86 || e.codeName === 'IndexKeySpecsConflict') {
           console.log('  ℹ️  Lesson indexes already exist');
         } else {
           throw error;
@@ -196,7 +199,7 @@ export class DatabaseManager {
         status: 'success',
         collections: stats,
       };
-    } catch (error) {
+    } catch {
       return {
         status: 'error',
         collections: {},

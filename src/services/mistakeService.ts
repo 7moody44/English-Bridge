@@ -55,7 +55,7 @@ export const mistakeService = {
   getAllMistakes: async (): Promise<Mistake[]> => {
     const all: Mistake[] = [];
     let page = 1;
-    let totalPages = 1;
+    let totalPages: number;
     do {
       const res = await mistakeService.list({ resolved: 'all', page, limit: 50 });
       all.push(...res.items);

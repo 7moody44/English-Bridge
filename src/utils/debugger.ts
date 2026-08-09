@@ -137,7 +137,7 @@ export const checkConfig = (): void => {
  * Install global debug functions (for browser console)
  */
 export const installDebugTools = (): void => {
-  (window as any).EB_Debug = {
+  (window as unknown as Record<string, unknown>).EB_Debug = {
     testApi: testApiConnection,
     checkConfig,
     getLog: getDebugLog,

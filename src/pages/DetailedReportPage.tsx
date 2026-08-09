@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ChevronLeft, TrendingUp, Calendar, Award, Target, Clock, BookOpen, Lock, Flame, Trophy } from 'lucide-react';
+import { ChevronLeft, TrendingUp, Award, Target, BookOpen, Flame, Trophy } from 'lucide-react';
 import { LoadingSpinner } from '@/components/Shared/LoadingSpinner';
 import { useAuth } from '@/context/AuthContext';
-import { getProgressStats, getProgress } from '@/services/progressService';
+import { getProgressStats } from '@/services/progressService';
 
 interface DetailedStats {
   xp: number;

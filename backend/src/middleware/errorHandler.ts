@@ -21,11 +21,11 @@ export const errorHandler = (
   error: Error | ApplicationError,
   req: Request,
   res: Response,
-  next: NextFunction
+  _next: NextFunction
 ): void => {
   let statusCode = 500;
   let message = 'Internal Server Error';
-  let details: any = undefined;
+  let details: unknown = undefined;
 
   // Handle different types of errors
   if (error instanceof ApplicationError) {
@@ -35,20 +35,25 @@ export const errorHandler = (
     // Mongoose validation error
     statusCode = 400;
     message = 'Validation Error';
-    details = Object.values((error as any).errors).map((err: any) => ({
-      field: err.path,
-      message: err.message,
-      value: err.value,
-    }));
+    const validationErrors = (error as { errors?: Record<string, unknown> }).errors ?? {};
+    details = Object.values(validationErrors).map((err) => {
+      const e = err as { path?: unknown; message?: unknown; value?: unknown };
+      return {
+        field: e.path,
+        message: e.message,
+        value: e.value,
+      };
+    });
   } else if (error.name === 'CastError') {
     // Mongoose cast error (invalid ObjectId, etc.)
     statusCode = 400;
     message = 'Invalid data format';
-  } else if (error.name === 'MongoServerError' && (error as any).code === 11000) {
+  } else if (error.name === 'MongoServerError' && (error as { code?: number }).code === 11000) {
     // Duplicate key error
     statusCode = 409;
     message = 'Resource already exists';
-    const field = Object.keys((error as any).keyPattern)[0];
+    const keyPattern = (error as { keyPattern?: Record<string, unknown> }).keyPattern ?? {};
+    const field = Object.keys(keyPattern)[0];
     details = `${field} already exists`;
   } else if (error.name === 'JsonWebTokenError') {
     statusCode = 401;
@@ -102,6 +107,8 @@ export const notFoundHandler = (req: Request, res: Response): void => {
 };
 
 // Async error wrapper
-export const asyncHandler = (fn: Function) => (req: Request, res: Response, next: NextFunction) => {
+export const asyncHandler = (
+  fn: (req: Request, res: Response, next: NextFunction) => unknown
+) => (req: Request, res: Response, next: NextFunction): void => {
   Promise.resolve(fn(req, res, next)).catch(next);
 };

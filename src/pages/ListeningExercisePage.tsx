@@ -200,13 +200,16 @@ export const ListeningExercisePage: React.FC = () => {
         }
       }
       setHintModal(null);
-    } catch (err: any) {
+    } catch (err) {
+      const hintErr = err as {
+        response?: { data?: { error?: string; balance?: number } };
+      };
       const msg =
-        err?.response?.data?.error || 'Could not purchase this hint. Please try again.';
+        hintErr?.response?.data?.error || 'Could not purchase this hint. Please try again.';
       setHintError(msg);
       // Refresh balance in case the server rejected for insufficient funds.
-      if (err?.response?.data?.balance !== undefined) {
-        setXpBalance(err.response.data.balance);
+      if (hintErr?.response?.data?.balance !== undefined) {
+        setXpBalance(hintErr.response.data.balance);
       }
     } finally {
       setHintProcessing(false);

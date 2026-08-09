@@ -1,7 +1,5 @@
-import { Request } from 'express';
-
 // API Response Types
-export interface ApiResponse<T = any> {
+export interface ApiResponse<T = unknown> {
   success: boolean;
   message: string;
   data?: T;
@@ -116,13 +114,7 @@ export interface Lesson {
 }
 
 // Request Types with Authentication
-export interface AuthenticatedRequest extends Request {
-  user?: {
-    id: string;
-    username: string;
-    email: string;
-  };
-}
+// Note: Express.Request.user is augmented in src/middleware/auth.ts via Express.User.
 
 // Error Types
 export interface AppError extends Error {
@@ -133,5 +125,5 @@ export interface AppError extends Error {
 export interface ValidationError {
   field: string;
   message: string;
-  value?: any;
+  value?: unknown;
 }

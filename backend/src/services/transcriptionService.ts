@@ -117,7 +117,7 @@ export const transcribeAudio = async (
         Authorization: `Bearer ${config.groqApiKey}`,
         'Content-Type': `multipart/form-data; boundary=${boundary}`,
       },
-      body,
+      body: new Uint8Array(body),
       signal: controller.signal,
     });
 
@@ -126,21 +126,24 @@ export const transcribeAudio = async (
       throw new Error(`Groq STT error ${res.status}: ${detail.slice(0, 500)}`);
     }
 
-    const data: any = await res.json();
+    const data: unknown = await res.json();
+    const record = data as { segments?: unknown; text?: unknown } | null;
 
     // verbose_json returns segments with avg_logprob. Convert to 0..1 proxy.
     let confidence = 0.85; // sensible default
-    const segments: any[] | undefined = data?.segments;
+    const segments = record?.segments;
     if (Array.isArray(segments) && segments.length > 0) {
       const avgLogprob =
-        segments.reduce((sum, s) => sum + (typeof s.avg_logprob === 'number' ? s.avg_logprob : 0), 0) /
-        segments.length;
+        segments.reduce(
+          (sum, s) => sum + (typeof s.avg_logprob === 'number' ? s.avg_logprob : 0),
+          0
+        ) / segments.length;
       // avg_logprob is typically in [-1, 0]; map to ~[0.3, 1].
       confidence = Math.max(0, Math.min(1, Math.exp(avgLogprob)));
     }
 
     return {
-      text: String(data?.text ?? '').trim(),
+      text: String(record?.text ?? '').trim(),
       confidence,
     };
   } finally {

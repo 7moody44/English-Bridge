@@ -2,6 +2,7 @@ import { Router, Request, Response } from 'express';
 import * as bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import passport from 'passport';
+import { Strategy as GoogleStrategy } from 'passport-google-oauth20';
 import User from '../models/User.js';
 import UserProgress from '../models/UserProgress.js';
 import { config } from '../config/config.js';
@@ -759,9 +760,6 @@ router.get('/me', authMiddleware, async (req: AuthRequest, res: Response): Promi
 // Google OAuth (mounted only if credentials are configured)
 // ─────────────────────────────────────────────────────────────────────────────
 if (config.isGoogleEnabled) {
-  // Top-level await + dynamic import keeps this ESM-safe (no require()).
-  const { Strategy: GoogleStrategy } = await import('passport-google-oauth20');
-
   passport.use(
     new GoogleStrategy(
       {
@@ -769,7 +767,7 @@ if (config.isGoogleEnabled) {
         clientSecret: config.googleClientSecret,
         callbackURL: config.googleCallbackUrl,
       },
-      async (accessToken: string, refreshToken: string, profile: any, done: any) => {
+      async (accessToken: string, refreshToken: string, profile, done) => {
         try {
           const emails = profile.emails || [];
           const email = emails[0]?.value?.toLowerCase();
@@ -824,19 +822,30 @@ if (config.isGoogleEnabled) {
             await user.save();
           }
 
-          return done(null, user);
+          return done(null, user as unknown as Express.User);
         } catch (err) {
-          return done(err, undefined);
+          return done(err instanceof Error ? err : new Error(String(err)), undefined);
         }
       }
     )
   );
 
-  passport.serializeUser((user: any, done) => done(null, user._id?.toString() || user.id));
+  passport.serializeUser((user: Express.User, done) => {
+    const u = user as unknown as { _id?: { toString(): string }; id?: string };
+    done(null, u._id?.toString() || u.id);
+  });
   passport.deserializeUser(async (id: string, done) => {
     try {
       const user = await User.findById(id);
-      done(null, user);
+      if (!user) {
+        done(null, false);
+        return;
+      }
+      done(null, {
+        userId: user._id.toString(),
+        username: user.username,
+        email: user.email,
+      });
     } catch (err) {
       done(err, null);
     }

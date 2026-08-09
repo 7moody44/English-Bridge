@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { getAudioService } from '@/services/AudioService';
 
 interface AudioPlayerProps {

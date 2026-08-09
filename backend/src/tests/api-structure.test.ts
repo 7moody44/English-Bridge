@@ -1,10 +1,11 @@
 import request from 'supertest';
+import express from 'express';
 import { Server } from '../server.js';
 import { DatabaseManager } from '../config/database.js';
 
 describe('Task 1.2: Backend API Structure', () => {
   let server: Server;
-  let app: any;
+  let app: express.Application;
 
   beforeAll(async () => {
     // Initialize server without starting it (to avoid port conflicts)
@@ -15,7 +16,7 @@ describe('Task 1.2: Backend API Structure', () => {
     const dbManager = DatabaseManager.getInstance();
     try {
       await dbManager.connect();
-    } catch (error) {
+    } catch {
       // Database may already be connected, ignore error
       console.log('Database connection skipped (may already be connected)');
     }
@@ -26,7 +27,7 @@ describe('Task 1.2: Backend API Structure', () => {
     const dbManager = DatabaseManager.getInstance();
     try {
       await dbManager.disconnect();
-    } catch (error) {
+    } catch {
       // Ignore disconnection errors
       console.log('Database disconnection skipped');
     }

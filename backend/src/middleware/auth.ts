@@ -2,11 +2,25 @@ import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
 import { config } from '../config/config.js';
 
-export interface AuthRequest extends Request {
-  user?: { userId: string; username: string; email: string };
+declare global {
+  namespace Express {
+    interface User {
+      userId: string;
+      username: string;
+      email: string;
+    }
+  }
 }
 
-export const authMiddleware = (req: AuthRequest, res: Response, next: NextFunction): void => {
+// AuthRequest is a plain Request: the authenticated user is available on
+// req.user via the Express.User augmentation above.
+export type AuthRequest = Request;
+
+export const authMiddleware = (
+  req: Request,
+  res: Response,
+  next: NextFunction
+): void => {
   try {
     const authHeader = req.headers.authorization;
 
@@ -48,10 +62,10 @@ export const authMiddleware = (req: AuthRequest, res: Response, next: NextFuncti
   }
 };
 
-export const isAuthenticated = (req: AuthRequest): boolean => {
+export const isAuthenticated = (req: Request): boolean => {
   return !!req.user;
 };
 
-export const getCurrentUserId = (req: AuthRequest): string | null => {
+export const getCurrentUserId = (req: Request): string | null => {
   return req.user?.userId || null;
 };

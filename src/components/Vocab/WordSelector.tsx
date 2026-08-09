@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import type { VocabWord } from '@/data/vocabularyData';
-import { Check, X } from 'lucide-react';
+import { Check } from 'lucide-react';
 
 interface WordSelectorProps {
   words: VocabWord[];

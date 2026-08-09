@@ -106,7 +106,7 @@ userSchema.index({ createdAt: -1 });
 userSchema.methods.comparePassword = async function (candidatePassword: string): Promise<boolean> {
   try {
     return await bcrypt.compare(candidatePassword, this.passwordHash);
-  } catch (error) {
+  } catch {
     throw new Error('Error comparing passwords');
   }
 };

@@ -431,7 +431,7 @@ const buildStrengths = (a: TextAnalysis, req: WritingFeedbackRequest): string[] 
   return strengths.slice(0, 4);
 };
 
-const buildSuggestions = (a: TextAnalysis, req: WritingFeedbackRequest): string[] => {
+const buildSuggestions = (a: TextAnalysis, _req: WritingFeedbackRequest): string[] => {
   const suggestions: string[] = [];
   if (a.wordCount < 80) suggestions.push('Aim for at least 80–100 words to fully develop your ideas.');
   if (a.connectiveCount === 0) suggestions.push('Add linking words: "however", "therefore", "furthermore", "in addition".');
@@ -533,7 +533,7 @@ interface AIWritingFeedback {
 }
 
 const parseAIWriting = (raw: string): AIWritingFeedback => {
-  let parsed: any;
+  let parsed: Record<string, unknown> | null;
   try {
     parsed = JSON.parse(raw);
   } catch {
@@ -541,18 +541,18 @@ const parseAIWriting = (raw: string): AIWritingFeedback => {
     if (!match) throw new Error('Gemini response was not valid JSON');
     parsed = JSON.parse(match[0]);
   }
-  const clamp = (n: any, fallback = 50): number => {
+  const clamp = (n: unknown, fallback = 50): number => {
     const num = Number(n);
     if (!Number.isFinite(num)) return fallback;
     return Math.max(0, Math.min(100, Math.round(num)));
   };
   return {
-    grammarScore: clamp(parsed.grammarScore),
-    vocabularyScore: clamp(parsed.vocabularyScore),
-    styleScore: clamp(parsed.styleScore),
-    professionalRewrite: String(parsed.professionalRewrite ?? '').trim(),
-    strengths: Array.isArray(parsed.strengths) ? parsed.strengths.filter((s: any) => typeof s === 'string') : [],
-    suggestions: Array.isArray(parsed.suggestions) ? parsed.suggestions.filter((s: any) => typeof s === 'string') : [],
+    grammarScore: clamp(parsed?.grammarScore),
+    vocabularyScore: clamp(parsed?.vocabularyScore),
+    styleScore: clamp(parsed?.styleScore),
+    professionalRewrite: String(parsed?.professionalRewrite ?? '').trim(),
+    strengths: Array.isArray(parsed?.strengths) ? parsed.strengths.filter((s) => typeof s === 'string') : [],
+    suggestions: Array.isArray(parsed?.suggestions) ? parsed.suggestions.filter((s) => typeof s === 'string') : [],
   };
 };
 
@@ -607,7 +607,9 @@ const callGeminiWriting = async (req: WritingFeedbackRequest, a: TextAnalysis): 
       const detail = await res.text().catch(() => '');
       throw new Error(`Gemini API error ${res.status}: ${detail.slice(0, 200)}`);
     }
-    const data: any = await res.json();
+    const data = (await res.json()) as {
+      candidates?: { content?: { parts?: { text?: string }[] } }[];
+    } | null;
     const text: string | undefined = data?.candidates?.[0]?.content?.parts?.[0]?.text;
     if (!text) throw new Error('Gemini returned no content');
     return parseAIWriting(text);

@@ -68,7 +68,7 @@ const applyStreakUpdate = (progress: IUserProgress, now: Date = new Date()): voi
       currentStreak: 0,
       longestStreak: 0,
       lastActivityDate: now,
-    } as any;
+    } as unknown as typeof progress.streak;
   }
 
   const lastActivity = new Date(progress.streak.lastActivityDate);

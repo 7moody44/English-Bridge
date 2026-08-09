@@ -43,6 +43,7 @@ export interface IStreak {
 export interface IUserProgress extends Document {
   userId: Types.ObjectId;
   currentLevel: number;
+  currentCourse: number;
   currentLesson: number;
   completedLessons: ICompletedLesson[];
   completedCourses: ICompletedCourse[];
@@ -245,6 +246,13 @@ const userProgressSchema = new Schema<IUserProgress>(
       default: 1,
       min: [1, 'Level must be at least 1'],
       max: [10, 'Level must not exceed 10'],
+    },
+    currentCourse: {
+      type: Number,
+      required: [true, 'Current course is required'],
+      default: 1,
+      min: [1, 'Course must be at least 1'],
+      max: [10, 'Course must not exceed 10'],
     },
     currentLesson: {
       type: Number,

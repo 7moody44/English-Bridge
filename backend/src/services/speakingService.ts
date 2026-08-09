@@ -811,7 +811,7 @@ interface AIFeedback {
 
 /** Parse + sanitise the model's JSON, clamping scores to valid ranges. */
 const parseAIFeedback = (raw: string, req: SpeakingFeedbackRequest): AIFeedback => {
-  let parsed: any;
+  let parsed: Record<string, unknown> | null;
   try {
     parsed = JSON.parse(raw);
   } catch {
@@ -821,56 +821,60 @@ const parseAIFeedback = (raw: string, req: SpeakingFeedbackRequest): AIFeedback 
     parsed = JSON.parse(match[0]);
   }
 
-  const clamp = (n: any, fallback = 50): number => {
+  const clamp = (n: unknown, fallback = 50): number => {
     const num = Number(n);
     if (!Number.isFinite(num)) return fallback;
     return Math.max(0, Math.min(100, Math.round(num)));
   };
 
   const lowerTranscript = req.transcription.toLowerCase();
-  const vocabularyUsed: string[] = (parsed.vocabularyUsed ?? [])
-    .filter((w: any) => typeof w === 'string' && w.trim().length > 0)
-    .map((w: any) => String(w));
+  const rawVocabUsed = parsed?.vocabularyUsed;
+  const vocabularyUsed: string[] = Array.isArray(rawVocabUsed)
+    ? rawVocabUsed.filter((w) => typeof w === 'string' && w.trim().length > 0).map((w) => String(w))
+    : [];
   // Sanity-check claimed vocabulary against what was actually said.
   const verifiedUsed: string[] = Array.from(
     new Set(vocabularyUsed.filter((w) => lowerTranscript.includes(w.toLowerCase())))
   );
-  const claimedMissed: string[] = Array.isArray(parsed.vocabularyMissed)
-    ? parsed.vocabularyMissed.filter((w: any) => typeof w === 'string').map((w: any) => String(w))
+  const claimedMissed: string[] = Array.isArray(parsed?.vocabularyMissed)
+    ? parsed.vocabularyMissed.filter((w) => typeof w === 'string').map((w) => String(w))
     : req.targetVocabulary;
   const verifiedMissed: string[] = claimedMissed.filter((w) => !verifiedUsed.includes(w));
 
-  const cefr = String(parsed.estimatedCEFR ?? '').trim();
+  const cefr = String(parsed?.estimatedCEFR ?? '').trim();
   const validCEFR = ['Pre-A1', 'A1', 'A2', 'B1', 'B2', 'C1'].find(
     (l) => l.toLowerCase() === cefr.toLowerCase()
   );
 
   return {
-    pronunciationScore: clamp(parsed.pronunciationScore),
-    fluencyScore: clamp(parsed.fluencyScore),
-    grammarScore: clamp(parsed.grammarScore),
-    vocabularyScore: clamp(parsed.vocabularyScore),
-    confidenceScore: clamp(parsed.confidenceScore),
-    naturalnessScore: clamp(parsed.naturalnessScore),
+    pronunciationScore: clamp(parsed?.pronunciationScore),
+    fluencyScore: clamp(parsed?.fluencyScore),
+    grammarScore: clamp(parsed?.grammarScore),
+    vocabularyScore: clamp(parsed?.vocabularyScore),
+    confidenceScore: clamp(parsed?.confidenceScore),
+    naturalnessScore: clamp(parsed?.naturalnessScore),
     estimatedCEFR: validCEFR ?? 'Not assessed',
     vocabularyUsed: verifiedUsed,
     vocabularyMissed: verifiedMissed,
-    grammarErrors: Array.isArray(parsed.grammarErrors)
+    grammarErrors: Array.isArray(parsed?.grammarErrors)
       ? parsed.grammarErrors
-          .map((e: any) => ({
-            original: String(e?.original ?? ''),
-            correction: String(e?.correction ?? ''),
-            explanation: String(e?.explanation ?? ''),
-          }))
-          .filter((e: GrammarError) => e.original || e.correction)
+          .map((e) => {
+            const ge = e as Record<string, unknown> | null;
+            return {
+              original: String(ge?.original ?? ''),
+              correction: String(ge?.correction ?? ''),
+              explanation: String(ge?.explanation ?? ''),
+            };
+          })
+          .filter((e) => e.original || e.correction)
       : [],
-    strengths: Array.isArray(parsed.strengths)
-      ? parsed.strengths.filter((s: any) => typeof s === 'string')
+    strengths: Array.isArray(parsed?.strengths)
+      ? parsed.strengths.filter((s) => typeof s === 'string')
       : [],
-    suggestions: Array.isArray(parsed.suggestions)
-      ? parsed.suggestions.filter((s: any) => typeof s === 'string')
+    suggestions: Array.isArray(parsed?.suggestions)
+      ? parsed.suggestions.filter((s) => typeof s === 'string')
       : [],
-    improvedVersion: String(parsed.improvedVersion ?? '').trim(),
+    improvedVersion: String(parsed?.improvedVersion ?? '').trim(),
   };
 };
 
@@ -916,7 +920,9 @@ const callGemini = async (
       throw new Error(`Gemini API error ${res.status}: ${detail.slice(0, 200)}`);
     }
 
-    const data: any = await res.json();
+    const data = (await res.json()) as {
+      candidates?: { content?: { parts?: { text?: string }[] } }[];
+    } | null;
     const text: string | undefined = data?.candidates?.[0]?.content?.parts?.[0]?.text;
     if (!text) {
       throw new Error('Gemini returned no content');

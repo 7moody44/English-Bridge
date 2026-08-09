@@ -7,7 +7,6 @@ import {
   BarChart3, 
   Award, 
   GraduationCap, 
-  Edit,
   Lock,
   Bell,
   Globe,
