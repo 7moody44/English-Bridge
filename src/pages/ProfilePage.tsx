@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { BottomNavigation } from '@/components/Layout/BottomNavigation';
 import { useAuth } from '@/context/AuthContext';
+import logo from '@/assets/logo.png';
 import { 
   User, 
   BarChart3, 
@@ -158,9 +159,12 @@ export const ProfilePage: React.FC = () => {
         </button>
 
         {/* App Version */}
-        <p className="text-center text-xs text-gray-500 dark:text-gray-400 py-4">
-          English Bridge v1.0.0
-        </p>
+        <div className="flex items-center justify-center gap-2 py-4">
+          <img src={logo} alt="English Bridge" className="w-5 h-5 rounded object-contain" />
+          <p className="text-xs text-gray-500 dark:text-gray-400">
+            English Bridge v1.0.0
+          </p>
+        </div>
       </div>
 
       {/* Bottom Navigation */}

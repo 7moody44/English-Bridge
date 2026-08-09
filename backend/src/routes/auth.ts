@@ -8,7 +8,7 @@ import UserProgress from '../models/UserProgress.js';
 import { config } from '../config/config.js';
 import { AuthRequest, authMiddleware } from '../middleware/auth.js';
 import { generateOtpCode, hashOtpCode, verifyOtpCode, OTP_TTL_MS } from '../services/otpService.js';
-import { sendOtpEmail } from '../services/emailService.js';
+import { sendOtpEmail, sendNewUserEmail } from '../services/emailService.js';
 import { touchStreak } from '../services/progressService.js';
 
 const router = Router();
@@ -278,6 +278,9 @@ router.post('/register/verify-otp', async (req: Request, res: Response): Promise
     user.emailVerificationExpires = undefined;
     await user.save();
 
+    // Fire-and-forget: notify the new account (never blocks registration).
+    sendNewUserEmail(user.email).catch((e) => console.error('Welcome email failed:', e));
+
     // Create the progress record now that registration is fully complete.
     const existingProgress = await UserProgress.findOne({ userId: user._id });
     if (!existingProgress) {
@@ -424,6 +427,9 @@ router.post('/register/step2', async (req: Request, res: Response): Promise<void
       authProvider: 'local',
     });
     await user.save();
+
+    // Fire-and-forget: notify the new account (legacy register/step2 path).
+    sendNewUserEmail(user.email).catch((e) => console.error('Welcome email failed:', e));
 
     const userProgress = new UserProgress({
       userId: user._id,
@@ -802,6 +808,9 @@ if (config.isGoogleEnabled) {
               googleId: profile.id,
             });
             await user.save();
+
+            // Fire-and-forget: notify the new Google account.
+            sendNewUserEmail(user.email).catch((e) => console.error('Welcome email failed:', e));
 
             const userProgress = new UserProgress({
               userId: user._id,

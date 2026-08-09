@@ -1,7 +1,15 @@
 import nodemailer, { Transporter } from 'nodemailer';
+import { readFileSync } from 'fs';
+import { fileURLToPath } from 'url';
 import { config } from '../config/config.js';
 
 let transporter: Transporter | null = null;
+
+// Path to assets/email.txt at the project root — resolves correctly whether the
+// server runs from backend/src (dev) or backend/dist (production build).
+const WELCOME_EMAIL_TEMPLATE = fileURLToPath(
+  new URL('../../../assets/email.txt', import.meta.url)
+);
 
 function getTransporter(): Transporter {
   if (transporter) return transporter;
@@ -86,5 +94,66 @@ export async function sendOtpEmail(to: string, code: string, purpose: 'verify' |
   } catch (error) {
     console.error('❌ Failed to send OTP email:', error);
     return { sent: false, message: 'Failed to send verification email.' };
+  }
+}
+
+/**
+ * Reads the welcome-email body from assets/email.txt.
+ * Falls back to a default message if the file is missing/unreadable.
+ */
+function getWelcomeBody(): string {
+  try {
+    const content = readFileSync(WELCOME_EMAIL_TEMPLATE, 'utf8').trim();
+    if (content) return content;
+  } catch (error) {
+    console.error('⚠️ Could not read assets/email.txt:', error);
+  }
+  return 'Welcome to English Bridge!';
+}
+
+/**
+ * Sends the automatic welcome email to a newly created account.
+ * Body is loaded from assets/email.txt; sent from k4linx@gmail.com.
+ *
+ * Same dev/real behaviour as OTP emails — never throws.
+ */
+export async function sendNewUserEmail(to: string): Promise<SendOtpResult> {
+  const body = getWelcomeBody();
+  const subject = 'Welcome to English Bridge!';
+
+  const htmlBody = `
+    <div style="font-family: Inter, Arial, sans-serif; max-width: 480px; margin: 0 auto; padding: 24px;">
+      <h2 style="color: #051650; margin-bottom: 8px;">English Bridge</h2>
+      <p style="color: #475569; margin-top: 0; white-space: pre-line;">${body
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')}</p>
+    </div>
+  `;
+
+  if (!config.isEmailReal) {
+    console.log('\n────────────────────────────────────────');
+    console.log('📧 [DEV MODE] Welcome email (no SMTP configured)');
+    console.log(`   To:      ${to}`);
+    console.log(`   Body:    ${body}`);
+    console.log('────────────────────────────────────────\n');
+    return {
+      sent: true,
+      message: 'DEV MODE: welcome email logged (no SMTP configured).',
+    };
+  }
+
+  try {
+    await getTransporter().sendMail({
+      from: `"English Bridge" <${config.emailFrom}>`,
+      to,
+      subject,
+      text: body,
+      html: htmlBody,
+    });
+    return { sent: true, message: 'Welcome email sent.' };
+  } catch (error) {
+    console.error('❌ Failed to send welcome email:', error);
+    return { sent: false, message: 'Failed to send welcome email.' };
   }
 }

@@ -1,5 +1,6 @@
 import React, { type ReactNode } from 'react';
 import { BottomNavigation } from './BottomNavigation';
+import logo from '@/assets/logo.png';
 
 interface LayoutProps {
   children: ReactNode;
@@ -23,6 +24,11 @@ export const Layout: React.FC<LayoutProps> = ({ children, title, showBack, onBac
                 ←
               </button>
             )}
+            <img
+              src={logo}
+              alt="English Bridge"
+              className="w-10 h-10 rounded-lg object-contain bg-white/20 shadow-md"
+            />
             <h1 className="text-2xl font-bold leading-tight">{title}</h1>
           </div>
         </header>

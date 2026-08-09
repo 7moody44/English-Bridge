@@ -8,6 +8,7 @@ import {
   type CefrBand,
 } from '@/services/assessmentService';
 import { useAuth } from '@/context/AuthContext';
+import logo from '@/assets/logo.png';
 import {
   Award,
   BookOpen,
@@ -155,9 +156,11 @@ export const AssessmentPage: React.FC = () => {
         {/* Header / Logo */}
         <div className="flex items-center justify-between mb-8 px-2">
           <div className="flex items-center gap-2.5">
-            <div className="w-9 h-9 rounded-xl bg-primary-600 dark:bg-primary-700 flex items-center justify-center shadow-md">
-              <span className="font-extrabold text-white tracking-tighter text-lg">EB</span>
-            </div>
+            <img
+              src={logo}
+              alt="English Bridge"
+              className="w-9 h-9 rounded-xl object-contain bg-white shadow-md"
+            />
             <span className="font-extrabold text-gray-900 dark:text-white text-xl tracking-tight">
               English<span className="text-primary-600 dark:text-primary-400">Bridge</span>
             </span>

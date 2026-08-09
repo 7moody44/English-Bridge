@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { BottomNavigation } from '@/components/Layout/BottomNavigation';
 import { useAuth } from '@/context/AuthContext';
 import { getProgressStats } from '@/services/progressService';
+import logo from '@/assets/logo.png';
 import { vocabularyWords } from '@/data/vocabularyData';
 import { 
   Headphones, 
@@ -101,9 +102,16 @@ export const HomePage: React.FC = () => {
         <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16"></div>
         <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full -ml-12 -mb-12"></div>
         
-        <div className="relative z-10">
-          <p className="text-sm opacity-90 mb-1">{getGreeting()}</p>
-          <h1 className="text-2xl font-bold leading-tight">Hi, {user?.firstName || 'Student'}!</h1>
+        <div className="relative z-10 flex items-center gap-4">
+          <img
+            src={logo}
+            alt="English Bridge"
+            className="w-12 h-12 rounded-xl object-contain bg-white/20 shadow-md"
+          />
+          <div>
+            <p className="text-sm opacity-90 mb-1">{getGreeting()}</p>
+            <h1 className="text-2xl font-bold leading-tight">Hi, {user?.firstName || 'Student'}!</h1>
+          </div>
         </div>
       </div>
 

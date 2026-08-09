@@ -1,5 +1,6 @@
 import React from 'react';
 import { LoginForm } from '@/components/Auth/LoginForm';
+import logo from '@/assets/logo.png';
 
 /**
  * Shared auth shell: deep-navy gradient background with a subtle radial glow,
@@ -26,9 +27,11 @@ export const AuthShell: React.FC<{ children: React.ReactNode; tagline: string }>
     <div className="relative w-full max-w-md animate-slide-up">
       {/* Brand */}
       <div className="text-center mb-8">
-        <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-indigo-400 to-purple-600 shadow-lg shadow-indigo-900/50 mb-4">
-          <span className="text-white font-bold text-xl">EB</span>
-        </div>
+        <img
+          src={logo}
+          alt="English Bridge"
+          className="inline-block w-16 h-16 rounded-2xl object-contain shadow-lg shadow-indigo-900/50 mb-4"
+        />
         <h1 className="text-3xl font-bold text-white tracking-tight">English Bridge</h1>
         <p className="text-slate-300/80 mt-1 text-sm">{tagline}</p>
       </div>
