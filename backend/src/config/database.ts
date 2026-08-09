@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
-import { config } from './config';
-import { seedLessons } from './seedData';
-import { User, UserProgress, Lesson } from '../models/index';
+import { config } from './config.js';
+import { seedLessons } from './seedData.js';
+import { User, UserProgress, Lesson } from '../models/index.js';
 
 export class DatabaseManager {
   private static instance: DatabaseManager;

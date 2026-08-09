@@ -1,4 +1,4 @@
-import UserProgress, { IUserProgress } from '../models/UserProgress';
+import UserProgress, { IUserProgress } from '../models/UserProgress.js';
 import { Types } from 'mongoose';
 
 // CEFR Level Mapping based on course level

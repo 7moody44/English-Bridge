@@ -1,4 +1,4 @@
-import { level1Lessons } from './seedData';
+import { level1Lessons } from './seedData.js';
 
 /**
  * Validation tests for seedData.ts constraints
