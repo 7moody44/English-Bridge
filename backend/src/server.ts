@@ -7,7 +7,7 @@ import { securityMiddleware, compressionMiddleware, requestLogger, healthCheck }
 import { errorHandler, notFoundHandler } from './middleware/errorHandler.js';
 import { apiRoutes } from './routes/index.js';
 
-// Hosting providers like Render have no IPv6 egress — smtp.gmail.com (and other
+// Hosting providers like Render have no IPv6 egress — SMTP hosts (and other
 // services) can resolve to IPv6 first, causing "connect ENETUNREACH ...:465".
 // Force IPv4-first so SMTP/email and all outbound connections actually work.
 dns.setDefaultResultOrder('ipv4first');

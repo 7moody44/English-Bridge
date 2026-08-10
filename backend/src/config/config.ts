@@ -10,7 +10,10 @@ interface Config {
   jwtSecret: string;
   jwtExpire: string;
   frontendUrl: string;
-  // Email / OTP
+  // Email / OTP — SMTP provider (defaults: Brevo free tier)
+  smtpHost: string;
+  smtpPort: number;
+  smtpSecure: boolean;
   emailUser: string;
   emailAppPassword: string;
   emailFrom: string;
@@ -44,9 +47,12 @@ export const config: Config = {
   jwtExpire: getEnvVar('JWT_EXPIRE', '7d'),
   frontendUrl: getEnvVar('FRONTEND_URL', 'http://localhost:5173'),
   // Email / OTP — app password stays optional for dev mode
-  emailUser: process.env.EMAIL_USER || 'k4linx@gmail.com',
+  smtpHost: process.env.SMTP_HOST || 'smtp-relay.brevo.com',
+  smtpPort: parseInt(process.env.SMTP_PORT || '587', 10),
+  smtpSecure: (process.env.SMTP_SECURE || '').toLowerCase() === 'true',
+  emailUser: process.env.EMAIL_USER || '',
   emailAppPassword: process.env.EMAIL_APP_PASSWORD || '',
-  emailFrom: process.env.EMAIL_FROM || process.env.EMAIL_USER || 'k4linx@gmail.com',
+  emailFrom: process.env.EMAIL_FROM || 'k4linx@gmail.com',
   isEmailReal: Boolean(process.env.EMAIL_APP_PASSWORD && process.env.EMAIL_APP_PASSWORD.length > 0),
   // Google OAuth — optional until you add credentials
   googleClientId: process.env.GOOGLE_CLIENT_ID || '',
@@ -87,12 +93,14 @@ const validateConfig = () => {
 validateConfig();
 
 // Startup diagnostics — never let email silently run in DEV mode in production.
-const emailMode = config.isEmailReal ? 'REAL (Gmail SMTP)' : 'DEV MODE (no emails sent!)';
+const emailMode = config.isEmailReal
+  ? `REAL (${config.smtpHost}:${config.smtpPort})`
+  : 'DEV MODE (no emails sent!)';
 console.log(`\n📧 Email mode: ${emailMode}`);
 if (config.nodeEnv === 'production' && !config.isEmailReal) {
   console.error(
     '⚠️  PRODUCTION RUNNING WITHOUT EMAIL_APP_PASSWORD — OTP/welcome emails are NOT being sent.\n' +
-    '    Set EMAIL_APP_PASSWORD (and EMAIL_USER/EMAIL_FROM) in the hosting environment,\n' +
+    '    Set EMAIL_APP_PASSWORD (SMTP key) and EMAIL_USER (SMTP login) in the hosting environment,\n' +
     '    e.g. Render → Service → Environment → add env var, then redeploy.'
   );
 }

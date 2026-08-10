@@ -12,23 +12,21 @@ const WELCOME_EMAIL_TEMPLATE = fileURLToPath(
   new URL('../../../assets/email.txt', import.meta.url)
 );
 
-const SMTP_HOST = 'smtp.gmail.com';
-const SMTP_PORT = 465;
-
 /**
  * Hosting providers like Render have no IPv6 egress. Even with ipv4first DNS
- * ordering, smtp.gmail.com can still resolve to IPv6 and the connection dies
+ * ordering, an SMTP host can still resolve to IPv6 and the connection dies
  * with "connect ENETUNREACH <ipv6>:465". So resolve the IPv4 address ourselves
  * and connect to the IP directly (keeping the hostname for TLS verification).
  */
 async function resolveSmtpHost(): Promise<{ host: string; tls?: { servername: string } }> {
+  const host = config.smtpHost;
   try {
-    const { address } = await dns.lookup(SMTP_HOST, { family: 4 });
-    console.log(`📧 smtp.gmail.com resolved to IPv4: ${address}`);
-    return { host: address, tls: { servername: SMTP_HOST } };
+    const { address } = await dns.lookup(host, { family: 4 });
+    console.log(`📧 ${host} resolved to IPv4: ${address}`);
+    return { host: address, tls: { servername: host } };
   } catch (error) {
-    console.warn(`⚠️ Could not resolve ${SMTP_HOST} to IPv4, using hostname directly:`, error);
-    return { host: SMTP_HOST };
+    console.warn(`⚠️ Could not resolve ${host} to IPv4, using hostname directly:`, error);
+    return { host };
   }
 }
 
@@ -39,15 +37,15 @@ async function getTransporter(): Promise<Transporter> {
 
   transporter = nodemailer.createTransport({
     host,
-    port: SMTP_PORT,
-    secure: true,
+    port: config.smtpPort,
+    secure: config.smtpSecure,
     tls,
     auth: {
       user: config.emailUser,
       pass: config.emailAppPassword,
     },
     // Fail fast: nodemailer's defaults wait up to 2 minutes per socket, which
-    // makes "send code" hang forever when Gmail is slow. 10s cap per phase.
+    // makes "send code" hang forever when the SMTP server is slow. 10s cap per phase.
     connectionTimeout: 10_000,
     greetingTimeout: 10_000,
     socketTimeout: 10_000,
@@ -66,7 +64,7 @@ export interface SendOtpResult {
  * Sends a 6-digit OTP email.
  *
  * Behaviour:
- *  - REAL mode (EMAIL_APP_PASSWORD set): sends via Gmail SMTP from config.emailFrom.
+ *  - REAL mode (EMAIL_APP_PASSWORD set): sends via SMTP (Brevo by default) from config.emailFrom.
  *  - DEV mode (no password): logs the code to the server console AND returns it
  *    in the result so the frontend can display it during localhost testing.
  *
@@ -124,7 +122,7 @@ export async function sendOtpEmail(to: string, code: string, purpose: 'verify' |
         html: htmlBody,
       });
       console.log(
-        `📧 OTP email accepted by Gmail → ${to} (${purpose}) messageId: ${info.messageId}`
+        `📧 OTP email accepted by SMTP → ${to} (${purpose}) messageId: ${info.messageId}`
       );
       return { sent: true, message: 'Verification email sent.' };
     } catch (error) {
@@ -155,7 +153,7 @@ function getWelcomeBody(): string {
 
 /**
  * Sends the automatic welcome email to a newly created account.
- * Body is loaded from assets/email.txt; sent from k4linx@gmail.com.
+ * Body is loaded from assets/email.txt; sent from config.emailFrom.
  *
  * Same dev/real behaviour as OTP emails — never throws.
  */
@@ -194,7 +192,7 @@ export async function sendNewUserEmail(to: string): Promise<SendOtpResult> {
         text: body,
         html: htmlBody,
       });
-      console.log(`📧 Welcome email accepted by Gmail → ${to} messageId: ${info.messageId}`);
+      console.log(`📧 Welcome email accepted by SMTP → ${to} messageId: ${info.messageId}`);
       return { sent: true, message: 'Welcome email sent.' };
     } catch (error) {
       if (attempt === 1) {
