@@ -17,7 +17,8 @@ interface Config {
   emailUser: string;
   emailAppPassword: string;
   emailFrom: string;
-  isEmailReal: boolean; // true when a real SMTP password is configured
+  brevoApiKey: string; // Brevo HTTP API key (xkeysib-...) — required on Render free tier, which blocks SMTP ports
+  isEmailReal: boolean; // true when a real email credential is configured
   // Google OAuth
   googleClientId: string;
   googleClientSecret: string;
@@ -53,7 +54,12 @@ export const config: Config = {
   emailUser: process.env.EMAIL_USER || '',
   emailAppPassword: process.env.EMAIL_APP_PASSWORD || '',
   emailFrom: process.env.EMAIL_FROM || 'k4linx@gmail.com',
-  isEmailReal: Boolean(process.env.EMAIL_APP_PASSWORD && process.env.EMAIL_APP_PASSWORD.length > 0),
+  // Brevo HTTP API works on Render free tier (SMTP ports are blocked there)
+  brevoApiKey: process.env.BREVO_API_KEY || '',
+  isEmailReal: Boolean(
+    (process.env.EMAIL_APP_PASSWORD && process.env.EMAIL_APP_PASSWORD.length > 0) ||
+      (process.env.BREVO_API_KEY && process.env.BREVO_API_KEY.length > 0)
+  ),
   // Google OAuth — optional until you add credentials
   googleClientId: process.env.GOOGLE_CLIENT_ID || '',
   googleClientSecret: process.env.GOOGLE_CLIENT_SECRET || '',
@@ -94,13 +100,15 @@ validateConfig();
 
 // Startup diagnostics — never let email silently run in DEV mode in production.
 const emailMode = config.isEmailReal
-  ? `REAL (${config.smtpHost}:${config.smtpPort})`
+  ? config.brevoApiKey
+    ? 'REAL (Brevo HTTP API)'
+    : `REAL (SMTP ${config.smtpHost}:${config.smtpPort})`
   : 'DEV MODE (no emails sent!)';
 console.log(`\n📧 Email mode: ${emailMode}`);
 if (config.nodeEnv === 'production' && !config.isEmailReal) {
   console.error(
-    '⚠️  PRODUCTION RUNNING WITHOUT EMAIL_APP_PASSWORD — OTP/welcome emails are NOT being sent.\n' +
-    '    Set EMAIL_APP_PASSWORD (SMTP key) and EMAIL_USER (SMTP login) in the hosting environment,\n' +
-    '    e.g. Render → Service → Environment → add env var, then redeploy.'
+    '⚠️  PRODUCTION RUNNING WITHOUT EMAIL CREDENTIALS — OTP/welcome emails are NOT being sent.\n' +
+    '    On Render free tier, SMTP ports are blocked — set BREVO_API_KEY (Settings → SMTP & API → API keys,\n' +
+    '    starts with "xkeysib-"). Alternatively set EMAIL_APP_PASSWORD (SMTP key) if your host allows SMTP.'
   );
 }

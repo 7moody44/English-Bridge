@@ -54,6 +54,89 @@ async function getTransporter(): Promise<Transporter> {
   return transporter;
 }
 
+const BREVO_API_URL = 'https://api.brevo.com/v3/smtp/email';
+
+interface MailPayload {
+  to: string;
+  subject: string;
+  text: string;
+  html: string;
+}
+
+/**
+ * Sends via the Brevo HTTP API (port 443).
+ *
+ * This is the ONLY path that works on Render free tier: since Sept 2025 Render
+ * blocks outbound traffic to SMTP ports 25/465/587 on free services.
+ * Requires BREVO_API_KEY (Settings → SMTP & API → API keys, starts with
+ * "xkeysib-") and a sender verified in Brevo (Settings → Senders).
+ */
+async function sendViaBrevoApi(payload: MailPayload): Promise<{ messageId?: string | undefined }> {
+  const response = await fetch(BREVO_API_URL, {
+    method: 'POST',
+    headers: {
+      'api-key': config.brevoApiKey,
+      'content-type': 'application/json',
+      accept: 'application/json',
+    },
+    body: JSON.stringify({
+      sender: { name: 'English Bridge', email: config.emailFrom },
+      to: [{ email: payload.to }],
+      subject: payload.subject,
+      textContent: payload.text,
+      htmlContent: payload.html,
+    }),
+  });
+
+  if (!response.ok) {
+    const body = await response.text();
+    throw new Error(`Brevo API ${response.status}: ${body.slice(0, 300)}`);
+  }
+
+  const data = (await response.json()) as { messageId?: string };
+  return { messageId: data.messageId };
+}
+
+async function sendViaSmtp(payload: MailPayload): Promise<{ messageId?: string | undefined }> {
+  const info = await (await getTransporter()).sendMail({
+    from: `"English Bridge" <${config.emailFrom}>`,
+    to: payload.to,
+    subject: payload.subject,
+    text: payload.text,
+    html: payload.html,
+  });
+  return { messageId: info.messageId };
+}
+
+async function deliver(payload: MailPayload): Promise<{ messageId?: string | undefined }> {
+  return config.brevoApiKey ? sendViaBrevoApi(payload) : sendViaSmtp(payload);
+}
+
+/**
+ * Sends with up to 2 attempts (delivery is the #1 failure point, so a single
+ * retry meaningfully raises the success rate). Never throws.
+ */
+async function deliverWithRetry(payload: MailPayload, label: string): Promise<SendOtpResult> {
+  const provider = config.brevoApiKey ? 'Brevo' : 'SMTP';
+  for (let attempt = 1; attempt <= 2; attempt++) {
+    try {
+      const { messageId } = await deliver(payload);
+      console.log(
+        `📧 ${label} email accepted by ${provider} → ${payload.to} messageId: ${messageId}`
+      );
+      return { sent: true, message: `${label} email sent.` };
+    } catch (error) {
+      if (attempt === 1) {
+        console.warn(`⚠️ ${label} email send failed, retrying once...`, (error as Error).message);
+        await new Promise((r) => setTimeout(r, 500));
+      } else {
+        console.error(`❌ Failed to send ${label.toLowerCase()} email (2 attempts):`, error);
+      }
+    }
+  }
+  return { sent: false, message: `Failed to send ${label.toLowerCase()} email.` };
+}
+
 export interface SendOtpResult {
   sent: boolean;
   devCode?: string; // present only in dev mode, surfaced back to the client
@@ -64,9 +147,10 @@ export interface SendOtpResult {
  * Sends a 6-digit OTP email.
  *
  * Behaviour:
- *  - REAL mode (EMAIL_APP_PASSWORD set): sends via SMTP (Brevo by default) from config.emailFrom.
- *  - DEV mode (no password): logs the code to the server console AND returns it
- *    in the result so the frontend can display it during localhost testing.
+ *  - REAL mode (BREVO_API_KEY or EMAIL_APP_PASSWORD set): sends via Brevo HTTP
+ *    API (default, works on Render free tier) or SMTP fallback.
+ *  - DEV mode (no credentials): logs the code to the server console AND returns
+ *    it in the result so the frontend can display it during localhost testing.
  *
  * Never throws — failures return { sent: false } so callers can give the user
  * a generic message without leaking transport errors.
@@ -110,31 +194,11 @@ export async function sendOtpEmail(to: string, code: string, purpose: 'verify' |
     };
   }
 
-  // REAL mode — send via Gmail (up to 2 attempts; delivery is the #1 failure
-  // point so a single retry meaningfully raises success rate).
-  for (let attempt = 1; attempt <= 2; attempt++) {
-    try {
-      const info = await (await getTransporter()).sendMail({
-        from: `"English Bridge" <${config.emailFrom}>`,
-        to,
-        subject,
-        text: textBody,
-        html: htmlBody,
-      });
-      console.log(
-        `📧 OTP email accepted by SMTP → ${to} (${purpose}) messageId: ${info.messageId}`
-      );
-      return { sent: true, message: 'Verification email sent.' };
-    } catch (error) {
-      if (attempt === 1) {
-        console.warn('⚠️ OTP email send failed, retrying once...', (error as Error).message);
-        await new Promise((r) => setTimeout(r, 500));
-      } else {
-        console.error('❌ Failed to send OTP email (2 attempts):', error);
-      }
-    }
-  }
-  return { sent: false, message: 'Failed to send verification email.' };
+  // REAL mode — send (up to 2 attempts).
+  return deliverWithRetry(
+    { to, subject, text: textBody, html: htmlBody },
+    'OTP'
+  );
 }
 
 /**
@@ -183,25 +247,9 @@ export async function sendNewUserEmail(to: string): Promise<SendOtpResult> {
     };
   }
 
-  for (let attempt = 1; attempt <= 2; attempt++) {
-    try {
-      const info = await (await getTransporter()).sendMail({
-        from: `"English Bridge" <${config.emailFrom}>`,
-        to,
-        subject,
-        text: body,
-        html: htmlBody,
-      });
-      console.log(`📧 Welcome email accepted by SMTP → ${to} messageId: ${info.messageId}`);
-      return { sent: true, message: 'Welcome email sent.' };
-    } catch (error) {
-      if (attempt === 1) {
-        console.warn('⚠️ Welcome email send failed, retrying once...', (error as Error).message);
-        await new Promise((r) => setTimeout(r, 500));
-      } else {
-        console.error('❌ Failed to send welcome email (2 attempts):', error);
-      }
-    }
-  }
-  return { sent: false, message: 'Failed to send welcome email.' };
+  // REAL mode — send (up to 2 attempts).
+  return deliverWithRetry(
+    { to, subject, text: body, html: htmlBody },
+    'Welcome'
+  );
 }
