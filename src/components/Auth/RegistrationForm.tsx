@@ -69,17 +69,9 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({ onSuccess })
         confirmPassword,
       });
       setPendingToken(data.pendingToken);
-      if (data.devMode && data.devCode) {
-        setDevCode(data.devCode);
-      } else if (data.fallback && data.fallbackCode) {
-        setDevCode(data.fallbackCode);
-      }
+      if (data.devMode && data.devCode) setDevCode(data.devCode);
       setStep('otp');
-      setInfo(
-        data.fallback
-          ? 'We could not send the email. Use the code below to complete registration.'
-          : `We sent a 6-digit code to ${data.email}.`
-      );
+      setInfo(`We sent a 6-digit code to ${data.email}.`);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Registration failed');
     } finally {
@@ -111,16 +103,8 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({ onSuccess })
     try {
       const data = await authService.registerResendOtp(pendingToken);
       setPendingToken(data.pendingToken);
-      if (data.devMode && data.devCode) {
-        setDevCode(data.devCode);
-      } else if (data.fallback && data.fallbackCode) {
-        setDevCode(data.fallbackCode);
-      }
-      setInfo(
-        data.fallback
-          ? 'We could not send the email. Use the new code below.'
-          : 'A new code was sent.'
-      );
+      if (data.devMode && data.devCode) setDevCode(data.devCode);
+      setInfo('A new code was sent.');
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Could not resend code');
     } finally {

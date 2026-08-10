@@ -62,8 +62,6 @@ export interface InitiateRegisterResponse {
   email: string;
   devMode?: boolean;
   devCode?: string;
-  fallback?: boolean;
-  fallbackCode?: string;
 }
 export interface VerifyOtpResponse {
   success: true;
@@ -122,13 +120,10 @@ export const authService = {
     ),
 
   forgotPassword: (email: string) =>
-    call<SimpleResponse & { devMode?: boolean; devCode?: string; fallback?: boolean; fallbackCode?: string }>(
-      '/auth/forgot-password',
-      {
-        method: 'POST',
-        body: JSON.stringify({ email }),
-      }
-    ),
+    call<SimpleResponse & { devMode?: boolean; devCode?: string }>('/auth/forgot-password', {
+      method: 'POST',
+      body: JSON.stringify({ email }),
+    }),
 
   verifyResetOtp: (email: string, otp: string) =>
     call<ResetTokenResponse>('/auth/verify-reset-otp', {

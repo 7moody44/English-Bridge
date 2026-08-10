@@ -15,7 +15,9 @@ function getTransporter(): Transporter {
   if (transporter) return transporter;
 
   transporter = nodemailer.createTransport({
-    service: 'gmail',
+    host: 'smtp.gmail.com',
+    port: 465,
+    secure: true,
     auth: {
       user: config.emailUser,
       pass: config.emailAppPassword,
@@ -86,20 +88,31 @@ export async function sendOtpEmail(to: string, code: string, purpose: 'verify' |
     };
   }
 
-  // REAL mode — send via Gmail.
-  try {
-    await getTransporter().sendMail({
-      from: `"English Bridge" <${config.emailFrom}>`,
-      to,
-      subject,
-      text: textBody,
-      html: htmlBody,
-    });
-    return { sent: true, message: 'Verification email sent.' };
-  } catch (error) {
-    console.error('❌ Failed to send OTP email:', error);
-    return { sent: false, message: 'Failed to send verification email.' };
+  // REAL mode — send via Gmail (up to 2 attempts; delivery is the #1 failure
+  // point so a single retry meaningfully raises success rate).
+  for (let attempt = 1; attempt <= 2; attempt++) {
+    try {
+      const info = await getTransporter().sendMail({
+        from: `"English Bridge" <${config.emailFrom}>`,
+        to,
+        subject,
+        text: textBody,
+        html: htmlBody,
+      });
+      console.log(
+        `📧 OTP email accepted by Gmail → ${to} (${purpose}) messageId: ${info.messageId}`
+      );
+      return { sent: true, message: 'Verification email sent.' };
+    } catch (error) {
+      if (attempt === 1) {
+        console.warn('⚠️ OTP email send failed, retrying once...', (error as Error).message);
+        await new Promise((r) => setTimeout(r, 500));
+      } else {
+        console.error('❌ Failed to send OTP email (2 attempts):', error);
+      }
+    }
   }
+  return { sent: false, message: 'Failed to send verification email.' };
 }
 
 /**
@@ -148,17 +161,25 @@ export async function sendNewUserEmail(to: string): Promise<SendOtpResult> {
     };
   }
 
-  try {
-    await getTransporter().sendMail({
-      from: `"English Bridge" <${config.emailFrom}>`,
-      to,
-      subject,
-      text: body,
-      html: htmlBody,
-    });
-    return { sent: true, message: 'Welcome email sent.' };
-  } catch (error) {
-    console.error('❌ Failed to send welcome email:', error);
-    return { sent: false, message: 'Failed to send welcome email.' };
+  for (let attempt = 1; attempt <= 2; attempt++) {
+    try {
+      const info = await getTransporter().sendMail({
+        from: `"English Bridge" <${config.emailFrom}>`,
+        to,
+        subject,
+        text: body,
+        html: htmlBody,
+      });
+      console.log(`📧 Welcome email accepted by Gmail → ${to} messageId: ${info.messageId}`);
+      return { sent: true, message: 'Welcome email sent.' };
+    } catch (error) {
+      if (attempt === 1) {
+        console.warn('⚠️ Welcome email send failed, retrying once...', (error as Error).message);
+        await new Promise((r) => setTimeout(r, 500));
+      } else {
+        console.error('❌ Failed to send welcome email (2 attempts):', error);
+      }
+    }
   }
+  return { sent: false, message: 'Failed to send welcome email.' };
 }

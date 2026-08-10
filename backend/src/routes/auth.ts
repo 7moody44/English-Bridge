@@ -222,17 +222,12 @@ router.post('/register/initiate', async (req: Request, res: Response): Promise<v
 
     const pendingToken = issuePendingToken(user._id.toString(), 'verify');
 
-    // devCode: dev-mode only. fallbackCode: real mode, email failed/timed out.
-    const fallbackCode = !config.isEmailReal || emailResult.sent ? undefined : code;
-
     res.status(200).json({
       success: true,
       message: 'Verification code sent. Check your email.',
       pendingToken,
       // devCode is only populated in dev mode (no SMTP configured)
       ...(emailResult.devCode ? { devCode: emailResult.devCode, devMode: true } : {}),
-      // fallbackCode is populated in real mode when the email couldn't be sent
-      ...(fallbackCode ? { fallbackCode, fallback: true } : {}),
       email: user.email,
     });
   } catch (error) {
@@ -375,14 +370,11 @@ router.post('/register/resend-otp', async (req: Request, res: Response): Promise
     // Refresh the pending token so the new 10-min window starts now.
     const newPendingToken = issuePendingToken(user._id.toString(), 'verify');
 
-    const fallbackCode = !config.isEmailReal || emailResult.sent ? undefined : code;
-
     res.json({
       success: true,
       message: 'A new verification code has been sent.',
       pendingToken: newPendingToken,
       ...(emailResult.devCode ? { devCode: emailResult.devCode, devMode: true } : {}),
-      ...(fallbackCode ? { fallbackCode, fallback: true } : {}),
     });
   } catch (error) {
     console.error('Resend OTP error:', error);
@@ -667,12 +659,9 @@ router.post('/forgot-password', async (req: Request, res: Response): Promise<voi
       ),
     ]);
 
-    const fallbackCode = !config.isEmailReal || emailResult.sent ? undefined : code;
-
     res.json({
       ...genericSuccess,
       ...(emailResult.devCode ? { devCode: emailResult.devCode, devMode: true } : {}),
-      ...(fallbackCode ? { fallbackCode, fallback: true } : {}),
     });
   } catch (error) {
     console.error('Forgot password error:', error);

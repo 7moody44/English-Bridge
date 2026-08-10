@@ -29,17 +29,9 @@ export const ForgotPasswordPage: React.FC = () => {
     setIsLoading(true);
     try {
       const data = await authService.forgotPassword(email);
-      if (data.devMode && data.devCode) {
-        setDevCode(data.devCode);
-      } else if (data.fallback && data.fallbackCode) {
-        setDevCode(data.fallbackCode);
-      }
       // Backend returns a generic message regardless of whether the email exists.
-      setInfo(
-        data.fallback
-          ? 'We could not send the email. Use the code below to reset your password.'
-          : 'If an account exists for that email, a code is on its way.'
-      );
+      setInfo('If an account exists for that email, a code is on its way.');
+      if (data.devMode && data.devCode) setDevCode(data.devCode);
       setStage('otp');
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Something went wrong');
