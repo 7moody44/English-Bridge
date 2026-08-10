@@ -85,3 +85,14 @@ const validateConfig = () => {
 };
 
 validateConfig();
+
+// Startup diagnostics — never let email silently run in DEV mode in production.
+const emailMode = config.isEmailReal ? 'REAL (Gmail SMTP)' : 'DEV MODE (no emails sent!)';
+console.log(`\n📧 Email mode: ${emailMode}`);
+if (config.nodeEnv === 'production' && !config.isEmailReal) {
+  console.error(
+    '⚠️  PRODUCTION RUNNING WITHOUT EMAIL_APP_PASSWORD — OTP/welcome emails are NOT being sent.\n' +
+    '    Set EMAIL_APP_PASSWORD (and EMAIL_USER/EMAIL_FROM) in the hosting environment,\n' +
+    '    e.g. Render → Service → Environment → add env var, then redeploy.'
+  );
+}
