@@ -1,6 +1,7 @@
 import nodemailer, { Transporter } from 'nodemailer';
 import { readFileSync } from 'fs';
 import { fileURLToPath } from 'url';
+import dns from 'node:dns/promises';
 import { config } from '../config/config.js';
 
 let transporter: Transporter | null = null;
@@ -11,13 +12,36 @@ const WELCOME_EMAIL_TEMPLATE = fileURLToPath(
   new URL('../../../assets/email.txt', import.meta.url)
 );
 
-function getTransporter(): Transporter {
+const SMTP_HOST = 'smtp.gmail.com';
+const SMTP_PORT = 465;
+
+/**
+ * Hosting providers like Render have no IPv6 egress. Even with ipv4first DNS
+ * ordering, smtp.gmail.com can still resolve to IPv6 and the connection dies
+ * with "connect ENETUNREACH <ipv6>:465". So resolve the IPv4 address ourselves
+ * and connect to the IP directly (keeping the hostname for TLS verification).
+ */
+async function resolveSmtpHost(): Promise<{ host: string; tls?: { servername: string } }> {
+  try {
+    const { address } = await dns.lookup(SMTP_HOST, { family: 4 });
+    console.log(`📧 smtp.gmail.com resolved to IPv4: ${address}`);
+    return { host: address, tls: { servername: SMTP_HOST } };
+  } catch (error) {
+    console.warn(`⚠️ Could not resolve ${SMTP_HOST} to IPv4, using hostname directly:`, error);
+    return { host: SMTP_HOST };
+  }
+}
+
+async function getTransporter(): Promise<Transporter> {
   if (transporter) return transporter;
 
+  const { host, tls } = await resolveSmtpHost();
+
   transporter = nodemailer.createTransport({
-    host: 'smtp.gmail.com',
-    port: 465,
+    host,
+    port: SMTP_PORT,
     secure: true,
+    tls,
     auth: {
       user: config.emailUser,
       pass: config.emailAppPassword,
@@ -92,7 +116,7 @@ export async function sendOtpEmail(to: string, code: string, purpose: 'verify' |
   // point so a single retry meaningfully raises success rate).
   for (let attempt = 1; attempt <= 2; attempt++) {
     try {
-      const info = await getTransporter().sendMail({
+      const info = await (await getTransporter()).sendMail({
         from: `"English Bridge" <${config.emailFrom}>`,
         to,
         subject,
@@ -163,7 +187,7 @@ export async function sendNewUserEmail(to: string): Promise<SendOtpResult> {
 
   for (let attempt = 1; attempt <= 2; attempt++) {
     try {
-      const info = await getTransporter().sendMail({
+      const info = await (await getTransporter()).sendMail({
         from: `"English Bridge" <${config.emailFrom}>`,
         to,
         subject,
