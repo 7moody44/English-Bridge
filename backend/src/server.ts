@@ -1,10 +1,16 @@
 import express from 'express';
+import dns from 'node:dns';
 import { config } from './config/config.js';
 import { DatabaseManager } from './config/database.js';
 import { corsMiddleware } from './middleware/cors.js';
 import { securityMiddleware, compressionMiddleware, requestLogger, healthCheck } from './middleware/security.js';
 import { errorHandler, notFoundHandler } from './middleware/errorHandler.js';
 import { apiRoutes } from './routes/index.js';
+
+// Hosting providers like Render have no IPv6 egress — smtp.gmail.com (and other
+// services) can resolve to IPv6 first, causing "connect ENETUNREACH ...:465".
+// Force IPv4-first so SMTP/email and all outbound connections actually work.
+dns.setDefaultResultOrder('ipv4first');
 
 class Server {
   private app: express.Application;

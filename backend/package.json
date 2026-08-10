@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "tsx watch --clear-screen=false src/server.ts",
     "build": "tsc",
-    "start": "node dist/server.js",
+    "start": "node --dns-result-order=ipv4first dist/server.js",
     "test": "jest",
     "test:watch": "jest --watch",
     "lint": "eslint src",
