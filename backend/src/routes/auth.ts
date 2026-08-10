@@ -207,27 +207,32 @@ router.post('/register/initiate', async (req: Request, res: Response): Promise<v
 
     await user.save();
 
-    // Send the OTP email in the BACKGROUND — never block the response on SMTP.
-    // Gmail can take 1-2 minutes (or stall), which makes "Send code" appear
-    // frozen. The pending token is returned instantly; the email keeps going.
-    // Dev mode awaits because it only logs to the console (instant) and the
-    // devCode must be included in the response.
+    // Wait up to 2s for the email, but never hang the response on SMTP (Gmail
+    // can stall for minutes). If the send hasn't completed by then, the code is
+    // returned in the response as a fallback so registration is never blocked.
+    // The email promise keeps running in the background either way.
     const emailPromise = sendOtpEmail(user.email, code, 'verify');
-    let emailResult: SendOtpResult | undefined;
-    if (config.isEmailReal) {
-      emailPromise.catch((e) => console.error('OTP email background send failed:', e));
-    } else {
-      emailResult = await emailPromise;
-    }
+    emailPromise.catch((e) => console.error('OTP email background send failed:', e));
+    const emailResult = await Promise.race([
+      emailPromise,
+      new Promise<SendOtpResult>((resolve) =>
+        setTimeout(() => resolve({ sent: false, message: 'Email send timed out.' }), 2000)
+      ),
+    ]);
 
     const pendingToken = issuePendingToken(user._id.toString(), 'verify');
+
+    // devCode: dev-mode only. fallbackCode: real mode, email failed/timed out.
+    const fallbackCode = !config.isEmailReal || emailResult.sent ? undefined : code;
 
     res.status(200).json({
       success: true,
       message: 'Verification code sent. Check your email.',
       pendingToken,
       // devCode is only populated in dev mode (no SMTP configured)
-      ...(emailResult?.devCode ? { devCode: emailResult.devCode, devMode: true } : {}),
+      ...(emailResult.devCode ? { devCode: emailResult.devCode, devMode: true } : {}),
+      // fallbackCode is populated in real mode when the email couldn't be sent
+      ...(fallbackCode ? { fallbackCode, fallback: true } : {}),
       email: user.email,
     });
   } catch (error) {
@@ -356,23 +361,28 @@ router.post('/register/resend-otp', async (req: Request, res: Response): Promise
     user.emailVerificationExpires = new Date(Date.now() + OTP_TTL_MS);
     await user.save();
 
-    // Send in the background — don't block the response on SMTP (see /register/initiate).
+    // Wait up to 2s for the email, fall back to returning the code in the
+    // response if the send stalls or fails (see /register/initiate).
     const emailPromise = sendOtpEmail(user.email, code, 'verify');
-    let emailResult: SendOtpResult | undefined;
-    if (config.isEmailReal) {
-      emailPromise.catch((e) => console.error('OTP email background send failed:', e));
-    } else {
-      emailResult = await emailPromise;
-    }
+    emailPromise.catch((e) => console.error('OTP email background send failed:', e));
+    const emailResult = await Promise.race([
+      emailPromise,
+      new Promise<SendOtpResult>((resolve) =>
+        setTimeout(() => resolve({ sent: false, message: 'Email send timed out.' }), 2000)
+      ),
+    ]);
 
     // Refresh the pending token so the new 10-min window starts now.
     const newPendingToken = issuePendingToken(user._id.toString(), 'verify');
+
+    const fallbackCode = !config.isEmailReal || emailResult.sent ? undefined : code;
 
     res.json({
       success: true,
       message: 'A new verification code has been sent.',
       pendingToken: newPendingToken,
-      ...(emailResult?.devCode ? { devCode: emailResult.devCode, devMode: true } : {}),
+      ...(emailResult.devCode ? { devCode: emailResult.devCode, devMode: true } : {}),
+      ...(fallbackCode ? { fallbackCode, fallback: true } : {}),
     });
   } catch (error) {
     console.error('Resend OTP error:', error);
@@ -646,18 +656,23 @@ router.post('/forgot-password', async (req: Request, res: Response): Promise<voi
     user.passwordResetExpires = new Date(Date.now() + OTP_TTL_MS);
     await user.save();
 
-    // Send in the background — don't block the response on SMTP (see /register/initiate).
+    // Wait up to 2s for the email, fall back to returning the code in the
+    // response if the send stalls or fails (see /register/initiate).
     const emailPromise = sendOtpEmail(user.email, code, 'reset');
-    let emailResult: SendOtpResult | undefined;
-    if (config.isEmailReal) {
-      emailPromise.catch((e) => console.error('OTP email background send failed:', e));
-    } else {
-      emailResult = await emailPromise;
-    }
+    emailPromise.catch((e) => console.error('OTP email background send failed:', e));
+    const emailResult = await Promise.race([
+      emailPromise,
+      new Promise<SendOtpResult>((resolve) =>
+        setTimeout(() => resolve({ sent: false, message: 'Email send timed out.' }), 2000)
+      ),
+    ]);
+
+    const fallbackCode = !config.isEmailReal || emailResult.sent ? undefined : code;
 
     res.json({
       ...genericSuccess,
-      ...(emailResult?.devCode ? { devCode: emailResult.devCode, devMode: true } : {}),
+      ...(emailResult.devCode ? { devCode: emailResult.devCode, devMode: true } : {}),
+      ...(fallbackCode ? { fallbackCode, fallback: true } : {}),
     });
   } catch (error) {
     console.error('Forgot password error:', error);
